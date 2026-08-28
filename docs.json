@@ -65,7 +65,13 @@
         "group": "Solver",
         "icon": "scroll-text",
         "pages": [
-          "release-notes"
+          "release-notes",
+          {
+            "group": "Get Started with Solver",
+            "pages": [
+              "untitled-page"
+            ]
+          }
         ]
       },
       {
