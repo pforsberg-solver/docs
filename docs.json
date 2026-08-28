@@ -56,10 +56,6 @@
     ],
     "display": "header"
   },
-  "banner": {
-    "content": "Ascend 2026 conference coming soon!",
-    "dismissible": false
-  },
   "metadata": {
     "timestamp": true
   },
@@ -69,6 +65,7 @@
         "group": "Solver",
         "icon": "scroll-text",
         "pages": [
+          "release-notes",
           "release-notes"
         ]
       },
