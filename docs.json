@@ -210,7 +210,9 @@
       {
         "group": "Solver",
         "icon": "scroll-text",
-        "pages": []
+        "pages": [
+          "release-notes"
+        ]
       }
     ]
   }
