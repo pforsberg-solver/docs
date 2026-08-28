@@ -1,3 +1,62 @@
 ---
 title: "Release Notes"
 ---
+## August 28, 2026 (Week 35)
+
+### New Features and Enhancements
+
+1. [Rollups](https://help.app.solverglobal.com/knowledge-base/rollups/) allow users to control the data that gets added to a dimension attribute, similar to Data Validation in Excel. Configured first in the Data Warehouse, similar to a dimension, rollups can be used in reporting for many practical financial and reporting purposes.
+2. Audit Log Enhancements: This month’s update expands what is being tracked in the Audit Log. This includes:
+   * Audit Log is now available to Customer Admins by default
+   * Expanded audit actions to include many actions on the administration page. Details can be found [here](https://help.app.solverglobal.com/knowledge-base/audit-log/#audit-log-features).
+   * Audit log will display the last 60 days of history.
+     + Contact Solver Support if you need audit history older than 60 days.
+     + Solver retains a rolling 365 days worth of audit logs.
+   * Support export to .csv of the Audit Log.
+3. Update user interface for [creating and maintaining Data Warehouse trees](https://help.app.solverglobal.com/knowledge-base/361-data-warehouse/#dimension-trees).
+   * Replace the “click to drag” experience with a drag and drop experience.
+   * Update action bar to align with the rest of the application.
+     + Save is moved to the primary action bar.
+     + Delete tree is move to the more actions button.
+
+### Bug Fixes
+
+#### Data Warehouse
+
+1. Prevent users from change the fiscal label after periods have been created.
+2. Add Last Ran By to Integrations information panel.
+3. Add Number of Steps to Jobs information panel.
+4. Dropdown on rollup attributes is cut off when the rollup attribute is the last one on the screen.
+5. Prevent user from creating a rollup.
+
+#### Connectors
+
+##### Fabric Connector
+
+1. Increase default timeout to 5 minutes.
+
+##### QuickBooks Online
+
+1. Add Vendor Data.
+2. Add Journal Data.
+3. Support all attributes on the GL and Journal Endpoints.
+
+#### Home Page
+
+1. Add tooltip on hover over of archive items to see parameter details.
+
+#### Settings and Administration
+
+1. Audit Log
+   * Rename Datahouse\_Copy\_Created to Create\_Datawarehouse\_Copy.
+   * Raname Datawarehouse\_Copy\_Downloaded to Download\_Datawarehouse\_Copy.
+   * Log more information to the Audit Log.
+   * Customer Admins should always have access to the Audit Log.
+   * Add date selector to Audit Log for improved filtering.
+   * Add export to .csv support.
+2. Redirect user properly when they have bookmarked the invite URL.
+3. Remove unnecessary information from database download filename.
+4. Improve table filtering experience in various screens.
+5. Resolve errors access administration menu for some users.
+6. Ensure extensions are appearing on the administration screen.
+7. Resolve issues where a user cannot override password provided by their browsers password manager.
