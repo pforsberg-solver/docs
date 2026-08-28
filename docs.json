@@ -1,0 +1,212 @@
+{
+  "theme": "almond",
+  "name": "Product Guide",
+  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "colors": {
+    "primary": "#166E3F",
+    "light": "#26BD6C",
+    "dark": "#166E3F"
+  },
+  "logo": {
+    "light": "/images/solv_logoblackpng.png",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.ico",
+  "appearance": {
+    "strict": false,
+    "default": "light"
+  },
+  "navbar": {
+    "links": [
+      {
+        "href": "/Report Templates",
+        "label": "Reporting"
+      },
+      {
+        "href": "/Input Templates",
+        "label": "Planning"
+      },
+      {
+        "href": "/Data Warehouse",
+        "label": "Data Warehouse"
+      },
+      {
+        "href": "/ERP Specific Material",
+        "label": "Integrations"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "assistant",
+      "mcp"
+    ],
+    "display": "header"
+  },
+  "banner": {
+    "content": "Ascend 2026 conference coming soon!",
+    "dismissible": false
+  },
+  "metadata": {
+    "timestamp": true
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Home",
+          "icon": "house",
+          "href": "/"
+        },
+        {
+          "anchor": "Changelog",
+          "icon": "scroll-text",
+          "href": "https://www.mintlify.com/docs/changelog"
+        },
+        {
+          "anchor": "Get S-Spec Help",
+          "icon": "life-buoy",
+          "href": "https://www.mintlify.com/docs/contact-support"
+        }
+      ]
+    },
+    "pages": [
+      {
+        "group": "Product Documentation",
+        "icon": "layers",
+        "expanded": true,
+        "pages": [
+          "platform/quickstart",
+          "platform/key-concepts",
+          "platform/configuration/settings",
+          "platform/configuration/user-management",
+          "platform/administration/roles-permissions",
+          {
+            "group": "Reporting",
+            "pages": [
+              "rd",
+              "rt"
+            ]
+          },
+          {
+            "group": "Input Templates",
+            "pages": [
+              "it-creation-via-rd",
+              "it",
+              "workflow",
+              "asisgnments",
+              "input-flow"
+            ]
+          },
+          {
+            "group": "Agent Studio",
+            "pages": []
+          },
+          {
+            "group": "Connector Studio",
+            "pages": []
+          },
+          {
+            "group": "Data Warehouse",
+            "pages": [
+              {
+                "group": "Data",
+                "pages": [
+                  "Integrations",
+                  "rules",
+                  "jobs",
+                  "event-log"
+                ]
+              },
+              {
+                "group": "Currency",
+                "pages": [
+                  "monthly-rates",
+                  "rate-types",
+                  "rate-type-configuration"
+                ]
+              },
+              {
+                "group": "Configuration",
+                "pages": [
+                  "dimensions",
+                  "modules",
+                  "module-schema",
+                  "period-config",
+                  "api"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Settings and Administration",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "group": "Analytics",
+        "icon": "chart-bar",
+        "hidden": true,
+        "expanded": true,
+        "pages": [
+          "analytics/quickstart",
+          "analytics/connect-data",
+          "analytics/dashboards/create-dashboard",
+          "analytics/reports/scheduled-reports"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "icon": "plug",
+        "expanded": true,
+        "pages": [
+          "integrations/quickstart",
+          "integrations/authentication",
+          "integrations/connectors/crm",
+          "integrations/webhooks/configure"
+        ]
+      },
+      "product-documentation",
+      {
+        "group": "Reporting",
+        "hidden": true,
+        "pages": [
+          "report-designer",
+          "create-report"
+        ]
+      },
+      {
+        "group": "ERP Specific Material",
+        "pages": [
+          {
+            "group": "Business Central",
+            "pages": [
+              "quick-start",
+              "extension"
+            ]
+          },
+          {
+            "group": "Netsuite",
+            "pages": [
+              "saved-search"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
