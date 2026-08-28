@@ -65,7 +65,6 @@
         "group": "Solver",
         "icon": "scroll-text",
         "pages": [
-          "release-notes",
           "release-notes"
         ]
       },
