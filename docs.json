@@ -206,6 +206,11 @@
             ]
           }
         ]
+      },
+      {
+        "group": "Solver",
+        "icon": "scroll-text",
+        "pages": []
       }
     ]
   }
