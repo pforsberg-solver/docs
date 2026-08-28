@@ -1,6 +1,6 @@
 {
   "theme": "almond",
-  "name": "Product Guide",
+  "name": "Solver Product Help",
   "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
   "colors": {
     "primary": "#166E3F",
@@ -70,16 +70,6 @@
           "anchor": "Home",
           "icon": "house",
           "href": "https://solverglobal.com"
-        },
-        {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
-        },
-        {
-          "anchor": "Get S-Spec Help",
-          "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
         }
       ]
     },
