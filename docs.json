@@ -1,6 +1,6 @@
 {
   "theme": "almond",
-  "name": "Solver Product Help",
+  "name": "Search for product answers",
   "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
   "colors": {
     "primary": "#166E3F",
@@ -64,15 +64,6 @@
     "timestamp": true
   },
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Home",
-          "icon": "house",
-          "href": "https://solverglobal.com"
-        }
-      ]
-    },
     "pages": [
       {
         "group": "Solver",
