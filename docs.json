@@ -85,6 +85,13 @@
     },
     "pages": [
       {
+        "group": "Solver",
+        "icon": "scroll-text",
+        "pages": [
+          "release-notes"
+        ]
+      },
+      {
         "group": "Product Documentation",
         "icon": "layers",
         "expanded": true,
