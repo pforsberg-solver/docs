@@ -89,8 +89,9 @@ title: "Release Notes"
 #### Settings & Administration
 1. Remove All Inclusive Licensing messaging
 
-### June 19, 2026 (Week 25)
-#### New Features and Enhancements
+## June 19, 2026 (Week 25)
+
+### New Features and Enhancements
 1. [Content Manager](https://help.app.solverglobal.com/knowledge-base/content-manager/): A new, administrative menu enabling users to see all items within the tenant.
    * In the initial release of Content Manager, only Reports Templates, Input Templates and their associated categories are shown in Content Manger. Future updates will add support for other items in your Solver tenant.
 2. Freeze first row (headers) of the drilldown sheet in the Portal
@@ -109,7 +110,7 @@ title: "Release Notes"
        - Add and fix existing filter capabilities
    * Improve experience when creating Module or Dimension attributes.
 
-#### Bug Fixes
+### Bug Fixes
 **Report and Input Templates**
 1. Resolve issues where a users is unable to unshared a report category
 2. Improve calculations when using the Analysis Agent.
@@ -119,33 +120,33 @@ title: "Release Notes"
 2. Add messaging when a user attempts to leave the Jobs configuration screen without saving their work
 3. Resolve issues where login text boxes were not showing when using the Business Central OData connector.
 
-# May 15th, 2026 (Week 20)
-## New Features and Enhancements
+## May 15th, 2026 (Week 20)
+### New Features and Enhancements
 * Expanded support for foreign languages when using the Export to PDF feature.
 * Updated Danish translations across the Data Warehouse
 
-## Bug Fixes
+### Bug Fixes
 * Fixed an issue where some users were unable to access the Module Schema Configuration page in the Data Warehouse if their label names were too large.
 * Fixed an issue where users were able to press the save button on a job without making any changes to that job.
 * Fixed an issue with the D365 Business Central connector that users were experiencing, where their data was not rendering if the first result had no lines detail.
 
-# April 2nd, 2026 (Week 14)
+## April 2nd, 2026 (Week 14)
 
-##New Features and Enhancements
+### New Features and Enhancements
 * **Ad Hoc Pivot.** Improvements were made to the pivot function within Ad Hoc to make it clearer which fields are used in the pivot.
 
-## Bug Fixes
+### Bug Fixes
 * **Academy Access.** Resolves an issue where users were unable to access the training academy from the portal.
 * **Ad Hoc Stability.** Resolves a scenario where the browser would become unresponsive under specific circumstances.
 * **Archive Playlist Order**. Fixes an issue where the archive would show an incorrect playlist order.
 
 # April 24th, 2026 (Week 17)
-## Features and Enhancements
+### Features and Enhancements
 * **Added Real-Time Report Run Status**: Added an on-screen message beside the Run button to display real-time report processing status after execution begins. This is located next to the run button after the run button has been pressed.
 * **Enabled Multi-Module Selection in Ad Hoc**: Users can now select multiple modules when creating Ad Hoc reports.
 * **Improved Filter Performance**: Enhanced report performance when applying filters.
 
-## Bug Fixes
+### Bug Fixes
 * **Sheet Names Issue**: Fixed an issue where reports using sheet per value would display sheet names instead of parameter names in the report.
 * **Filter Caching Issue**: Fixed an issue where filtering with wildcard expressions and value names for filters was not caching correctly.
 * **Tree Expansion Behavior Issue**: Fixed an issue where the tree expansion was not expanding correctly on sheet per value reports with tree parameters.
@@ -158,20 +159,20 @@ title: "Release Notes"
 * **SQL Connector Missing Data Issue**: When using the SQL Connector, fixed an issue where period parameters that included the last day of the month were missing transactions.
 * **Intacct Connector Missing Data Issue**: When using the Sage Intacct Connector, fixed an issue where period parameters that included the last day of the month were missing transactions.
 
-# April 2nd, 2026 (Week 14)
+## April 2nd, 2026 (Week 14)
 
-## Bug Fixes
+### Bug Fixes
 * Fixed an issue where navigating to the Data Warehouse Overview menu would sometimes result in an infinite spinner that prevented users from interacting with the page.
 * Fixed an issue with the NetSuite connector that was occurring when users attempted to run an integration that contained custom field functions AND didn’t apply summary types. This would result in duplicate data.
 
-# March 20th, 2026 (Week 12)
-## New Features and Enhancements
+## March 20th, 2026 (Week 12)
+### New Features and Enhancements
 * **Automatic Population of Solver Login Information**: Added automatic population of the email and password fields when signing in to Solver for users who have saved their credentials in their browser’s password manager.
 * **Ad Hoc Total Field Setting**: Added the ability for users to toggle total fields on or off for rows and columns in the Ad Hoc settings menu, rather than being enabled by default.
 * **Default Period Column in Data Explorer**: Improved the Data Explorer user experience by making the period column the default second column.
 * **Finnish Translations Update**: Improved Finnish translations across the application.
 
-## Bug Fixes
+### Bug Fixes
 * **Unsharing Favorited Reports Issue**: Fixed an issue in which reports unshared by the owner continued to appear on a user’s home screen if they had been favorited before unsharing.
 * **Parameter Selection Interface Issue**: Fixed an issue where the parameter selection menu could have been cut off due to the number of columns. The menu now automatically resizes to enhance the user experience.
 * **Report Package Currency Issue**: Fixed an issue where certain reports that were part of a package did not display values with the correct currency symbols or local decimal formatting.
@@ -184,8 +185,8 @@ title: "Release Notes"
 * **Task Mapping Issue**: Fixed an issue where, during the integration creation process, some users could not complete other field mappings after adding a new target field.
 * **Duplicated System Label Issue**: Fixed an issue that allowed users to use a system label when creating a custom attribute
 
-# February 20th, 2026 (Week 8)
-## Features and Enhancements
+## February 20th, 2026 (Week 8)
+### Features and Enhancements
 * **Updated Data Explorer User Experience**: Enhanced the Data Explorer experience with several changes, including:
   + Data Explorer will load the first 10k rows of data
     - The filters tab will now open automatically with the option to filter on the current period.
@@ -198,7 +199,7 @@ title: "Release Notes"
   + **Fabric Connector**: Added Options for Fabric Connector Timeout
     - Improved the Microsoft Fabric connector by increasing the default timeout and providing users with more options to customize it.
 
-## Bug Fixes
+### Bug Fixes
 * **Ad Hoc**
   + **Ad Hoc Danish Translations**: Updated Danish translations in Ad Hoc Reporting.
   + **Banner User Interface Issue**: Fixes an issue where a warning banner about potential dataset incompleteness due to row limits would cover the report title, preventing you from editing your Ad Hoc report title.
@@ -226,20 +227,20 @@ title: "Release Notes"
   + **License Distribution Issue**: Fixes an issue with the Implementor’s license, which was also being tracked as a Standard license on the license allocation screen.
   + **Danish Translations Issue**: Fixes an issue with Danish translations related to variables in reporting and custom drilldown.
 
-# January 14th, 2026 (Week 3)
-## Features and Enhancements
+## January 14th, 2026 (Week 3)
+## New Features and Enhancements
 * Minor enhancements to the Data Explorer, including:
   + **Filter Error Message**: Updated error messaging to inform users when they are applying a filter that returns no results.
 
-## Bug Fixes
+### Bug Fixes
 * Fixes several issues with the Data Explorer, including:
   + **Duplicated Values Issue**: Fixes an issue where adding values to a filter caused a duplicate of the original value to be included in addition to the newly selected values.
   + **Range of Values Filtering Issue**: Fixes an issue where changing the previously applied values on a filter when using a range of values would not update the displayed data.
   + **Deleting Data Issue**: Fixes an issue that occurred when attempting to delete a large number of rows.
   + **Row Count Issue**: Fixes an issue where the row count was not displaying for German, Danish, and Norwegian users.
 
-# January 23rd, 2026 (Week 4)
-## Features and Enhancements
+## January 23rd, 2026 (Week 4)
+### New Features and Enhancements
 * **Solver Copilot Update**: The newest Solver AI feature, Solver Copilot Analysis Agent, is now available for all users.
   + This new agent allows for context-based analysis of a user’s reports. For more information, [see our article](https://help.app.solverglobal.com/knowledge-base/copilot-analysis-agent/)on this exciting new feature.
     - This must be enabled by Customer Administrators in the settings menu and applies to all tenants.
@@ -253,7 +254,7 @@ title: "Release Notes"
 * **Added Finnish Language to Solver**: Finnish translations are now supported across Solver.
 * **Implementor license** – Users with an implementor license can now be selected as a publisher recipient.
 
-## Bug Fixes
+### Bug Fixes
 * **Template Scrolling Issue**: Fixes an issue where editing a cell in an input template would cause the template to automatically scroll to the top of the screen.
 * **Workflow Assignee Issue**: Fixes an issue in Workflow where, if no assignees are entered and the user clicks save, the appropriate error message is not displayed.
 * **Input Template Cell Issue**: Fixes an issue where simply clicking on a cell in an input template, without editing its value, would trigger Planning Security to lock the cell and prevent the input template from being saved.
