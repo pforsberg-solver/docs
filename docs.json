@@ -184,17 +184,62 @@
         "group": "ERP Specific Material",
         "pages": [
           {
-            "group": "Business Central",
+            "group": "Acumatica",
+            "pages": []
+          },
+          {
+            "group": "D365 Business Central",
             "pages": [
+              "untitled-page",
               "quick-start",
               "extension"
             ]
+          },
+          {
+            "group": "D365 Finance and Operations",
+            "pages": []
+          },
+          {
+            "group": "D365 Sales and Service",
+            "pages": []
+          },
+          {
+            "group": "Hubspot",
+            "pages": []
+          },
+          {
+            "group": "Microsoft Fabric",
+            "pages": []
           },
           {
             "group": "Netsuite",
             "pages": [
               "saved-search"
             ]
+          },
+          {
+            "group": "QuickBooks Online",
+            "pages": []
+          },
+          {
+            "group": "Sage Intacct",
+            "pages": []
+          },
+          {
+            "group": "Salesforce",
+            "pages": []
+          },
+          {
+            "group": "SAP Business One",
+            "pages": []
+          },
+          {
+            "group": "SAP ByDesign",
+            "pages": []
+          },
+          {
+            "group": "Zendesk",
+            "pages": []
           }
         ]
       }
