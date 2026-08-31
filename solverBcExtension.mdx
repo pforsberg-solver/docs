@@ -1,3 +1,50 @@
 ---
 title: "Solver's Business Central Extension"
 ---
+## Overview
+
+Solver develops an extension available for download within your Business Central tenant that provides a well-formatted API to be used within the Solver application for both QuickStart and non-quickstart implementations.
+
+* The extension is required for all QuickStart implementations.
+* Solver strongly recommends installing this extension for all implementations between Solver and Business Central.
+
+## Installing the Extension
+
+As a Business Central admin
+
+1. Log into Business Central.
+2. Search for Extension Marketplace to open Microsoft App Source.
+3. Search for Solver.
+4. Click **Get It Now** on the Solver extension.![](/wp-content/uploads/2022/10/Snag_6fc6a3a.png)
+
+The installation of this connector should take a couple of seconds. Once installed you can begin using the Solver BCv2 Connector.
+
+* This extension is installed on all Companies that are part of the currently logged-in Environment. Each Company must be active (not expired) to successfully install the extension. Users will need to delete any expired companies to install the extension.
+
+## Upgrading the Extension
+
+From time to time, Solver will release updates to the Extension. Release notes can be found at the bottom of this article. To update an extension, as a BC Admin,
+
+1. Search for Extension Management.  
+   ![](/wp-content/uploads/2022/10/Snag_6ff6922.png)
+2. The screen will list installed extensions. Search for “Solver” and select the Solver extension. Choose Uninstall.![](/wp-content/uploads/2022/10/Snag_6ff2582.png)
+3. In the popup, choose Delete Existing Data and click Uninstall. A prompt will notify you that all data will be delete related to the Solver Extension, click Yes.![](/wp-content/uploads/2022/10/Snag_6ff1a18.png)
+4. Upon clicking Uninstall, you will be warned again about deleting data, click Yes.![](/wp-content/uploads/2022/10/Snag_6ff3020.png)
+5. The process will take about 10-30 seconds and the extension will be uninstalled.
+
+Redownload the extension via the instructions listed above and you have successfully upgraded your extension.
+
+## Release Notes
+
+The table below details features and bug fixes found in specific versions of the “Solver CPM for Dynamics Business Central” available in your Business Central tenant for download.
+
+| Version | Availability (Release Date) | Short Description | Notes |
+| --- | --- | --- | --- |
+| 3.3.0.0 | Yes (Dec 23, 2024) | Add support for: – fixedAssets – fixedAssetDeprBooks – depcreciationBooks – fixedAssetLocations – faLedgerEntries | Required for QuickStart integrations that use Fixed Assets. |
+| 3.0.0.0 | Yes (Oct 14, 2024) | Add support for: – statisticalAccounts – statisticalLedgerEntries   – including dimensionSetEntries – jobs – jobTasks – jobPlanningLines – jobLedgerEntries (incl.dimensionSetEntries) – fixedAssets – fixedAssetDeprBooks | This extension is now called “Solver xFP&A for Business Central”  Common questions:   1. Can I  have both CPM and xFP&A versions installed > yes, but you should ideally uninstall the CPM version  2. What does the uninstall process look like. > the uninstall and reinstall process is generally fast (5min or less) but may vary by customer. Always perform any maintenance during a time when your Solver integration will not be running to avoid errors and consult with your BC consultant Steps:  – Via the Extension management menu, uninstall CPM version   – Via the Extension marketplace menu, install xFP&A version   3. Does this impact my BC data in any way > no it does not. |
+| 2.4.3.0 | Yes (Oct 11,2023) | Add support for: – updatedOn and createdOn for Sales lines – updates URL for Drill-to  Resolves issues with: “cannot delete record” error message |  |
+| 2.4.0.0 | Yes (Jul 24, 2023) | Resolves issues with: – Errors that some users were experiencing based on the BC version they had when installing the extension |  |
+| 2.3.0.0 | Yes (Apr 19, 2023) | Add support for: – Opening balances for GL by dimension set lines |  |
+| 2.2.1.0 | Yes (Jan 17, 2023) | Add support for: – QuickStart BC budget |  |
+| 2.0.0.0 | Yes (Oct 7, 2022) | Add support for:  – Sales Invoices header and lines – Sales credit header and lines – Sales memo header and lines  Resolve issues with:  – Accounts Payable and Accounts Receivable integrations erring with a hexadecimal error message when running an integration |  |
+| 1.2.0.0 | Yes (Jan 1, 2022) | Add support for: – GL detail – Opening balances (account & entity level only) – Custom dimensions – Accounts Payable – Accounts Receivable |  |
