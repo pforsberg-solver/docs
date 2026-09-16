@@ -27,11 +27,8 @@ This section will describe the process of enabling the Solver Data API.
 If the Solver API has never been used, it must be enabled and configured before using the API.
 
 1. From the Solver main menu, Select **Data Warehouse** and click on the **Configuration** tab to reveal the dropdown menu.  
-   ![](/wp-content/uploads/2023/09/DataAPI4.png)
 2. Select **API** from the drop-down menu.  
-   ![](/wp-content/uploads/2023/09/DataAPI2.png)
 3. The API access will be set to Disabled by default. Toggle the switch to enable the API.  
-   ![](/wp-content/uploads/2023/09/DataAPI9.png)
 4. Once the required modules have been selected to use with the API, click the save icon in the top right corner of the API page to confirm.
 
 ### Use Cases
@@ -44,15 +41,10 @@ There are several use cases for this feature. Solver users can utilize the Data 
 * Postman or similar software
 
 ## Sample Data
-
-![](/wp-content/uploads/2023/09/DataAPI8-1024x564.png)
-
 Sample data of available objects
 
 **Available Objects –** {{URL}}/api/v{{version}}/ –
-
 **Object Schema –** {{URL}}/api/v{{version}}/schema/{{shortLabel}} –
-
 **Data –** {{URL}}/api/v{{version}}/data/{{shortLabel}}
 
 ### Object Selection
@@ -103,17 +95,20 @@ The acceptable formatting options are removing the space between the words in th
 When using the filtering/sorting with v1.1 you are not required to reformat these fields. This version can be used if the reformatting process described above is not possible for your instance.
 
 Examples of an ordering opperation with v1.1 include:
-
+```
 {{URL}}/api/v1.1/data/gl?$orderBy=UDF005
+```
 
 Another formatting note when using the Data API is that users must include the day when querying data based on a date. Normally, users include the month and the year (202201). With the Data API, users will need to include a “01” within the chosen month as well (20220101). This will ensure that users are receiving the data that they expect.
 
 ## Data Types
 
-```
 Several data types will be returned in JSON format for exportation upon the release of this feature including:
-•	Objects
-EX:
+
+<Expandable title="Objects">
+
+Example Response:
+```
 [
     {
         "label": "General Ledger",
@@ -127,9 +122,12 @@ EX:
     },
     ....
 ]
+```
+</Expandable>
 
-•	Schemas endpoint
-EX:
+<Expandable title="Schemas">
+Example Response:
+```
 [
     {
         "columnName": "Scenario",
@@ -149,9 +147,12 @@ EX:
         "precision_scale": null,
         "maxLength": 50
     },
+```
+</Expandable>
 
-•	Data endpoint
-EX: 
+<Expandable title="Data Endpoints">
+Example Response: 
+```
 {
     "data": [
         {
@@ -190,6 +191,7 @@ EX:
     "{{URL}}: "https://demo.app.solverglobal.com/api/v1/data/gl?$orderby=%5BRowId%5D&$skip=1000&$top=1000"
 }
 ```
+</Expandable>
 
 ## Pagination
 
@@ -228,11 +230,9 @@ This section will detail the Postman configuration to connect to the Data API. T
 The URL and Access Token can be found by:
 
 1. Select the gear icon at the top right corner of the API access page.  
-   ![](/wp-content/uploads/2023/09/DataAPI1.png)
 2. Click on the **URL** button next to the **Data API** option to copy the required URL to the clipboard.
 3. Paste the token into the textbox next to **Token** and press **Send**.
 4. Paste this URL into the textbox next to **GET**.  
-   ![](/wp-content/uploads/2023/09/DataAPI7.png)
 5. Return to the API access page within the Solver application and select the **Access Token** button to copy the token to the clipboard. This will be a bearer token that can be added as an authentication header.
 
 ---
@@ -290,7 +290,6 @@ This ensures that the pipeline can handle paginated responses from the API.
 
 2. Click **Preview Data** to test the connection and verify the data.
 
-![](/wp-content/uploads/2023/09/image-1.png)
 
 ### **Step 5: Configure the Sink (Azure SQL Database)**
 
