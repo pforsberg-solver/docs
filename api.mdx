@@ -2,3 +2,310 @@
 title: "API"
 mode: "wide"
 ---
+## Introduction
+
+Solver has introduced a new API that will allow users to extract their data that has been loaded into the Solver application. While some users may have used the Solver External API before to work with Power BI or Tableau, this feature requires a different set of URLs to use.
+
+This feature can be enabled by toggling the switch on while on the API page found in the Data Warehouse menus. Once it has been enabled, someone from our product team will reach out to find out more about how we can help you best use the data API feature. Users should ensure a proper understanding of the information in this article before enabling this feature.
+
+This article will include instructions on how to set up the Solver Data API and provide sample use cases for how to effectively use this API with Postman and other applications.
+
+### Versioning
+
+Based on feedback received during the preview we created a v1.1 of the feature. This new version includes the functionality to support querying by system labels. The v1 of the API uses the friendly labels which may require a formatting change to remove spacing or special characters in order to complete the query. Now, users are able to use their system labels where changing the friendly label was not feasible. These system names will be used in both the OData queries and the responses and can be found in the Data Warehouse on the Configuration screen. They have been added to the Schema object to help developers translate between their friendly labels and the system labels.
+
+The configuration and query procedures will remain the same for both versions, with v1.1 using the ‘systemName’ to build the filter and order strings in the URL.
+
+Those who would like to use the API and are unable to reformat their labels to map them to the targets can use v1.1. To use system labels, use ‘v1.1’ in the query URL string instead of the default ‘v1’.
+
+## Menu, Interface, and Terminology
+
+### Configuration
+
+This section will describe the process of enabling the Solver Data API.
+
+If the Solver API has never been used, it must be enabled and configured before using the API.
+
+1. From the Solver main menu, Select **Data Warehouse** and click on the **Configuration** tab to reveal the dropdown menu.  
+   ![](/wp-content/uploads/2023/09/DataAPI4.png)
+2. Select **API** from the drop-down menu.  
+   ![](/wp-content/uploads/2023/09/DataAPI2.png)
+3. The API access will be set to Disabled by default. Toggle the switch to enable the API.  
+   ![](/wp-content/uploads/2023/09/DataAPI9.png)
+4. Once the required modules have been selected to use with the API, click the save icon in the top right corner of the API page to confirm.
+
+### Use Cases
+
+There are several use cases for this feature. Solver users can utilize the Data API to export their data to:
+
+* A separate Data Warehouse
+* A personal Azure data factory
+* An Excel file
+* Postman or similar software
+
+## Sample Data
+
+![](/wp-content/uploads/2023/09/DataAPI8-1024x564.png)
+
+Sample data of available objects
+
+**Available Objects –** {{URL}}/api/v{{version}}/ –
+
+**Object Schema –** {{URL}}/api/v{{version}}/schema/{{shortLabel}} –
+
+**Data –** {{URL}}/api/v{{version}}/data/{{shortLabel}}
+
+### Object Selection
+
+The “shortLabel” used in the api to request data from a specific object can be found by initially using the first **Available objects** request to pull a list of all objects and the names that are available to the API.
+
+## Filtering and Sorting
+
+| Operator | Description | Example |
+| --- | --- | --- |
+| Eq | Equal | scenario eq ‘ACT’ |
+| Ne | Not Equal | scenario ne ‘BUD’ |
+| Gt | Greater Than | period gt 20200101 |
+| Ge | Greater Than or Equal | period ge 20200101 |
+| Lt | Less Than | period lt 20200101 |
+| Le | Less Than or Equal | period le 20200101 |
+| And | Logical And | period le 20200101 and scenario eq ‘ACT’ |
+| Or | Logical Or | period le 20200101 and scenario ne ‘BUD’ |
+
+The Solver API is built using OData standards. While constructing a URL query, users will also have the option to filter or sort their results using operators. These operators will allow the database to filter out exactly the type of data the user plans to export to their target systems.
+
+These tools are separate from the main query process and one another. However, they may be used in conjunction with each other to refine queries. For example, to filter by a scenario of Actual and sort the results by a period in descending order, users may enter a URL similar to this: ({{URL}}/api/v1/data/gl?$filter=scenario eq ‘ACT’&$orderBy=period desc).
+
+This includes the operator “eq” to ensure that the only results that are pulled from the database for Actuals (equal to actual).
+
+Other examples of using the filter and sort tools include:
+
+* {{URL}}/api/v1/data/gl?$filter=scenario eq ‘ACT’
+* {{URL}}/api/v1/data/gl?$filter=period gt 20230101
+* {{URL}}/api/v1/data/gl?$filter=account eq 10100
+* {{URL}}/api/v1/data/gl?$orderBy=period desc
+* {{URL}}/api/v1/data/gl?$orderBy=transactionDate
+
+Users are also able to filter based on Dimensions using this API. Once it has been configured, users can choose any Dimensions that are associated with a published Module.
+
+Examples of filtering on Dimensions with v1.0 include:
+
+{{URL}}/api/v1/data/account
+
+{{URL}}/api/v1/data/dim1
+
+{{URL}}/api/v1/data/account?$filter=accountType eq ‘BalanceSheet’
+
+Using the filtering/sorting with v1.0 of the API may require a formatting change on some fields within the Data Warehouse before submitting the query. By default, users will have a space in between words in their module attribute labels such as “Update On”. This will not be able to be read by the Data API while attempting to add a filter or sort to the query on that attribute. To remedy this, users can edit the label from the module configuration screen within their Solver data warehouse.
+
+The acceptable formatting options are removing the space between the words in the title (UpdateOn) or separating the words with an underscore (Update\_On). This formatting change will not affect the inner workings of the data warehouse or exported data. This formatting change is not necessary for exported data, only attributes that will be used to sort or filter the data in an OData query.
+
+When using the filtering/sorting with v1.1 you are not required to reformat these fields. This version can be used if the reformatting process described above is not possible for your instance.
+
+Examples of an ordering opperation with v1.1 include:
+
+{{URL}}/api/v1.1/data/gl?$orderBy=UDF005
+
+Another formatting note when using the Data API is that users must include the day when querying data based on a date. Normally, users include the month and the year (202201). With the Data API, users will need to include a “01” within the chosen month as well (20220101). This will ensure that users are receiving the data that they expect.
+
+## Data Types
+
+```
+Several data types will be returned in JSON format for exportation upon the release of this feature including:
+•	Objects
+EX:
+[
+    {
+        "label": "General Ledger",
+        "shortLabel": "GL",
+        "objectType": "Module"
+    },
+    {
+        "label": "General Ledger Detail",
+        "shortLabel": "GL_Detail",
+        "objectType": "Module"
+    },
+    ....
+]
+
+•	Schemas endpoint
+EX:
+[
+    {
+        "columnName": "Scenario",
+        "dataType": "nvarchar(50)",
+        "precision_scale": null,
+        "maxLength": 50
+    },
+    {
+        "columnName": "Entity",
+        "dataType": "nvarchar(50)",
+        "precision_scale": null,
+        "maxLength": 50
+    },
+    {
+        "columnName": "Account",
+        "dataType": "nvarchar(50)",
+        "precision_scale": null,
+        "maxLength": 50
+    },
+
+•	Data endpoint
+EX: 
+{
+    "data": [
+        {
+            "rowId": 34671,
+            "scenario": "OBA",
+            "entity": "PRODUCTS",
+            "account": "10100",
+            "transactionDate": "2022-10-01T00:00:00Z",
+            "period": 20221001,
+            "transactionID": "122015",
+            "functional Amount": 1000.5000000000000000,
+            "reporting Amount": 1000.5000000000000000,
+            "value 3": null,
+            "row Comment": null,
+            "source": "Integration#201",
+            "rule Id": null,
+            "created On": "2022-10-04T21:43:27.52Z",
+            "created By": "IntegrationUser",
+            "updated On": "2022-10-04T21:43:27.52Z",
+            "updated By": "IntegrationUser",
+            "hasLID": false,
+            "currency": "USD",
+            "category": "MAIN",
+            "stargate": null,
+            "posting Layer": null,
+            "department": null,
+            "worker": null,
+            "financialPeriod": 122015,
+            "lastActivityPeriod": 112015,
+            "branch": "PRODWHOLE",
+            "ledger": "ACTUAL",
+            "subAccount": "000000"
+        }, 
+        ....
+    ],
+    "{{URL}}: "https://demo.app.solverglobal.com/api/v1/data/gl?$orderby=%5BRowId%5D&$skip=1000&$top=1000"
+}
+```
+
+## Pagination
+
+Data will be paginated according to specific OData Standards. Best practices and max amounts per page will be set at a later date upon an update of the API. Any time there is more than one page, there will be a next URL object that provides the next page within the JSON response. If there is no next page, it will state “NULL”.
+
+## Restrictions & Limitations
+
+* Rate limits could be set in the future.
+* Data types will be exported as raw unformatted data.
+  + Example: Dates will be in the raw format as “”transactionDate”: “2016-12-01T00:00:00Z””.
+* Calls that filter for large data sets will result in a timeout error. The amount of data that can be extracted at one time depends on the extraction tool that is being used. Users should consult their extraction tool’s documentation for limits. It is important to keep in mind that your specific performance will vary based on your data and your tools. Best practice is to split or filter for smaller data sets when using this API. It is not recommended to query data over 1,000,000 rows.
+* Certain Data Warehouse objects are not available from the Data API. Key objects that are not currently available are:
+  + Currency Configurations
+  + Monthly Currency Rates
+  + Trees
+  + Line Item Details (LIDs) data
+
+## Known Issues
+
+v1 of the TimePeriod export is missing the `MemberID` field that is required to join to associated fact sets. – Use the 1.1 version of the export or manually recreate the memberID field within the destination system until the member ID is added to the v1 API.
+
+Dimension ‘code’ fields are missing from the schema object. All Code fields are an NVARCHAR(50) data type. By default, the friendly label and system name are the same, but the friendly label could have been changed to another friendly label. The front-end dimension configuration screen will need to be used to translate the ‘code’ system name to the modified friendly label until this is corrected.
+
+## Support
+
+For questions on the Data API, please reference our Community to post Questions and help others. Solver’s product team and technical resources monitor the community for questions and will respond to the issues and bugs. Solver Support does not provide support for the Data API.
+
+Community resources and forums for this feature can be found [here](?hkb-redirect&nonce=31bd3d6d44&check=6j9l0&redirect=https%3A%2F%2Fsupport.solverglobal.com%2Fhc%2Fen-us%2Fcommunity%2Ftopics%2F19571792908820-Data-Export-API-Forum&otype=unknown&oid=0&source=block-content) on the Solver Community site.
+
+---
+
+## Extracting Data Using Postman
+
+This section will detail the Postman configuration to connect to the Data API. The URL and bearer token (access token) are required to get connected to Postman. These instructions will use Postman as an example of how to use a program in conjunction with the Data API. However, other programs might require additional steps when connecting to the Solver API. Please contact your consultant to learn more.
+
+The URL and Access Token can be found by:
+
+1. Select the gear icon at the top right corner of the API access page.  
+   ![](/wp-content/uploads/2023/09/DataAPI1.png)
+2. Click on the **URL** button next to the **Data API** option to copy the required URL to the clipboard.
+3. Paste the token into the textbox next to **Token** and press **Send**.
+4. Paste this URL into the textbox next to **GET**.  
+   ![](/wp-content/uploads/2023/09/DataAPI7.png)
+5. Return to the API access page within the Solver application and select the **Access Token** button to copy the token to the clipboard. This will be a bearer token that can be added as an authentication header.
+
+---
+
+## Extracting Data Using Azure Data Factory
+
+This guide walks you through setting up an integration between **Solver Data API** and **Azure Data Factory** to extract transaction data and store it in **Azure SQL Server**.
+
+### Prerequisites
+
+* An active **Microsoft Azure subscription**.
+  + [Get started with Azure – Introduction | Microsoft Azure](https://azure.microsoft.com/en-us/get-started/#explore-azure)
+  + [Create Your Azure Free Account Today | Microsoft Azure](https://azure.microsoft.com/en-us/free/)
+* Access to **Solver Data API** and a valid **Bearer token**.
+* Access Azure Data Factory here: https://adf.azure.com/
+
+### **Step 1: Create Azure Data Factory**
+
+1. Go to Azure Data Factory.
+2. Use the wizard to create a new Data Factory instance.
+3. Once created, click the **pen icon** to enter the **Edit** mode.
+
+### **Step 2: Create a New Pipeline**
+
+1. Click the **plus (+)** icon next to the filter resource dialog to create a new pipeline.
+2. Drag the **Copy Data** activity into the canvas area on the right.
+
+### **Step 3: Configure the Source (Solver Data API)**
+
+1. Select the **Copy Data** activity.
+2. Go to the **Source** tab and click **New** to create a new source dataset.
+3. Choose **REST** as the data source and click **Continue**.
+
+**Linked Service Setup**
+
+* **Name**: DataAPI
+* **URL**: https://demo.app.solverglobal.com/api/v1/data/gl/ (replace with your actual endpoint)
+* **Authentication Type**: Anonymous
+* **Headers**:
+  + **Name**: Authorization
+  + **Value**: Bearer xxxxxxxxxxxx (replace with your actual token)
+
+Click **Create** to finish setting up the linked service.
+
+![](/wp-content/uploads/2023/09/image.png)
+
+### **Step 4: Configure Pagination**
+
+1. In the source settings, set the **Pagination Rule** to:
+   * **Type**: AbsoluteUrl
+   * **Value Location**: Body
+   * **Value**: [‘nextUrl’]
+
+This ensures that the pipeline can handle paginated responses from the API.
+
+2. Click **Preview Data** to test the connection and verify the data.
+
+![](/wp-content/uploads/2023/09/image-1.png)
+
+### **Step 5: Configure the Sink (Azure SQL Database)**
+
+1. Go to the **Sink** tab and click **New** to create a new dataset.
+2. Choose **Azure SQL Database** as the destination.
+3. Configure the connection to your Azure SQL instance.
+
+### **Step 6: Map the Data**
+
+1. Go to the **Mapping** tab.
+2. Click **Import Schemas** to load the column structure.
+3. Map the source columns to the destination columns accordingly.
+
+### **Step 7: Finalize and Run**
+
+1. Click **Publish** to save your pipeline.
+2. Click **Validate** to check for errors.
+3. Click **Debug** to run the pipeline and test the integration.
