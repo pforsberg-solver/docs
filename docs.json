@@ -8,10 +8,14 @@
     "dark": "#166E3F"
   },
   "logo": {
-    "light": "/images/solv_logoblackpng.png",
-    "dark": "/logo/dark.svg"
+    "light": "/images/Solver_Logo.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://spmsandbox.mintlify.app/"
   },
-  "favicon": "/favicon.ico",
+  "favicon": {
+    "light": "/images/Solver_Kite-fav.png",
+    "dark": "/images/Solver_Kite-fav.png"
+  },
   "appearance": {
     "strict": false,
     "default": "light"
