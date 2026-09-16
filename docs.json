@@ -9,7 +9,7 @@
   },
   "logo": {
     "light": "/images/Solver_Logo.svg",
-    "dark": "/logo/dark.svg",
+    "dark": "/images/Solver_Logo.svg",
     "href": "https://spmsandbox.mintlify.app/"
   },
   "favicon": {
