@@ -72,7 +72,8 @@
               "GettingStarted",
               "updateSchedule"
             ]
-          }
+          },
+          "untitled-page-4"
         ]
       },
       {
@@ -185,7 +186,10 @@
         "pages": [
           {
             "group": "Acumatica",
-            "pages": []
+            "pages": [
+              "untitled-page-16",
+              "untitled-page-17"
+            ]
           },
           {
             "group": "D365 Business Central",
@@ -197,45 +201,68 @@
           },
           {
             "group": "D365 Finance and Operations",
-            "pages": []
+            "pages": [
+              "untitled-page-6",
+              "untitled-page-7"
+            ]
           },
           {
             "group": "D365 Sales and Service",
-            "pages": []
+            "pages": [
+              "untitled-page-3",
+              "untitled-page-5"
+            ]
           },
+          "untitled-page-18",
           {
             "group": "Hubspot",
-            "pages": []
+            "pages": [
+              "untitled-page-2"
+            ]
           },
           {
             "group": "Microsoft Fabric",
-            "pages": []
+            "pages": [
+              "untitled-page-8"
+            ]
           },
           {
             "group": "Netsuite",
             "pages": [
+              "untitled-page-9",
               "saved-search"
             ]
           },
           {
             "group": "QuickBooks Online",
-            "pages": []
+            "pages": [
+              "untitled-page-10"
+            ]
           },
           {
             "group": "Sage Intacct",
-            "pages": []
+            "pages": [
+              "untitled-page-11",
+              "untitled-page-12"
+            ]
           },
           {
             "group": "Salesforce",
-            "pages": []
+            "pages": [
+              "untitled-page-13"
+            ]
           },
           {
             "group": "SAP Business One",
-            "pages": []
+            "pages": [
+              "untitled-page-14"
+            ]
           },
           {
             "group": "SAP ByDesign",
-            "pages": []
+            "pages": [
+              "untitled-page-15"
+            ]
           },
           {
             "group": "Zendesk",
