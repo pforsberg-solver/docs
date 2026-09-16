@@ -187,14 +187,14 @@
           {
             "group": "Acumatica",
             "pages": [
-              "untitled-page-16",
-              "untitled-page-17"
+              "acumatica-gettingStarted",
+              "acumatica-qs"
             ]
           },
           {
             "group": "D365 Business Central",
             "pages": [
-              "untitled-page",
+              "bc-gettingStarted",
               "quick-start",
               "solverBcExtension"
             ]
@@ -202,71 +202,73 @@
           {
             "group": "D365 Finance and Operations",
             "pages": [
-              "untitled-page-6",
-              "untitled-page-7"
+              "d365fo-gettingStarted",
+              "d365FO-qs"
             ]
           },
           {
             "group": "D365 Sales and Service",
             "pages": [
-              "untitled-page-3",
-              "untitled-page-5"
+              "d365CRM-gettingStarted",
+              "d365CRM-qs"
             ]
           },
           "untitled-page-18",
           {
             "group": "Hubspot",
             "pages": [
-              "untitled-page-2"
+              "hubspot-gettingStarted"
             ]
           },
           {
             "group": "Microsoft Fabric",
             "pages": [
-              "untitled-page-8"
+              "fabric-gettingStarted"
             ]
           },
           {
             "group": "Netsuite",
             "pages": [
-              "untitled-page-9",
+              "netsuite-gettingStarted",
               "saved-search"
             ]
           },
           {
             "group": "QuickBooks Online",
             "pages": [
-              "untitled-page-10"
+              "qbo-gettingStarted"
             ]
           },
           {
             "group": "Sage Intacct",
             "pages": [
-              "untitled-page-11",
-              "untitled-page-12"
+              "intacct-gettingStarted",
+              "intacct-qs"
             ]
           },
           {
             "group": "Salesforce",
             "pages": [
-              "untitled-page-13"
+              "salesforce-gettingStarted"
             ]
           },
           {
             "group": "SAP Business One",
             "pages": [
-              "untitled-page-14"
+              "sapB1-gettingStarted"
             ]
           },
           {
             "group": "SAP ByDesign",
             "pages": [
-              "untitled-page-15"
+              "sapByDesign-gettingStarted"
             ]
           },
           {
             "group": "Zendesk",
-            "pages": []
+            "pages": [
+              "zendesk-gettingStarted"
+            ]
           }
         ]
       }
