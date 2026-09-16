@@ -3,16 +3,64 @@ title: "Integrations"
 mode: "wide"
 ---
 
-"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 
-<Frame>
-  ![Home](/images/integrations/home.png "Home")
-</Frame>
+Users are able to do the following actions:
 
-To get here 
+* Create New Integrations
+* Run Integrations
+* Copy Integrations
+* Edit Integrations
+* Export/Import Integrations
+* Delete Integrations
 
-1. open the app<br />
-   <Frame>
-     ![Image](/images/image.png "Image")
-   </Frame>
-2. adf
+The integrations table shows all integrations previously created and ran by the user. The following integration details are displayed in the Solver Portal:
+
+* **Name**: The integration name set by the user during integration creation
+* **Source**: Shows which marketplace connector was used to create the integration
+* **Status**: Gives real time update on the status of each integration, and whether they succeeded or failed
+* **Last Run**: Displays the day and time when the integration was last ran
+* **Modified By**: Indicates which user most recently modified the given integration
+* **Last Modified**: Shows the day and time when the given integration was modified by the user in the Modified By column
+
+#### **Creating New Integration**
+
+To create a new integration:
+
+1. Navigate to **Data > Integrations** page.
+2. If Data Warehouse permission to edit integrations are enabled for your user, an **Add New** button appears at the top right corner of the page.
+3. Click this to navigate to the **Integration Marketplace**. This is where you can select the desired Gateway, File Import or ERP connector and kick off the integration creation wizard.
+4. From here, follow the steps listed in the **How to build an Integration** help page.
+
+#### **Running Existing Integrations**
+
+There are two ways to run existing integrations, either manually select them to run or set them to automatically run within a job. This help page will document how to manually run integrations.
+
+To run an integration manually:
+
+1. Navigate to **Data > Integrations** page.
+2. If Data Warehouse permission to run integrations are enabled for your user, the **Run** button () appears as the first button of the top left menu.
+3. Select the desired integration and click **Run**.
+4. The status of the selected job will then update from **Queued > Processing**. This indicates the job is currently running.
+5. While the integration’s status shows **Processing**, the **Run** button changes to a **Cancel** button (). If the integration needs to be cancelled for any reason while running, click this button.
+   * Note that the cancel button currently does not work if an integration is automatically running through a job.
+6. The integration status will then change to either **Success** or **Fail**, indicating the integration finished running.
+
+#### **Editing Existing Integrations**
+
+To edit an existing integration:
+
+1. Navigate to **Data > Integrations** page.
+2. If Data Warehouse permissions to run and edit integrations are enabled for your user, the **Edit** button () appears as the third button of the top left menu.
+3. Select the desired integration and click **Edit**.
+4. This will navigate the user to the **Task Manager** step of the integration creation wizard, displaying the current configuration for this integration.
+5. From here, follow the steps listed in the **How to build an Integration** help page for notes on how to edit the integration as desired.
+
+#### **Deleting Existing Integrations**
+
+To delete an existing integration:
+
+1. Navigate to **Data > Integrations** page.
+2. If Data Warehouse permission to edit integrations are enabled for your user, the **Delete** button ![](/wp-content/uploads/2021/03/btn_delete.png) appears as the last button of the top left menu.
+3. Select the desired integration and click **Delete**.
+4. The **Delete Integration** modal appears, asking for user confirmation.
+5. Clicking **Delete** will close the modal and remove the integration from the integrations table. Clicking **Cancel** will close the modal, leaving the integration as is in the integrations table.
