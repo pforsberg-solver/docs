@@ -94,7 +94,8 @@
             "group": "Reporting",
             "pages": [
               "rd",
-              "rt"
+              "rt",
+              "period-calculations"
             ]
           },
           {
