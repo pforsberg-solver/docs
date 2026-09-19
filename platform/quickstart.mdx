@@ -43,4 +43,36 @@ mode: "wide"
   The general rule of thumb is to run Solver QuickStart for at least the General Ledger during your kick off. If Solver QuickStart supports additional modules for your data source, it is recommended to run QuickStart for these modules as well. 
 </Expandable>
 
-W
+# Solver QuickStart Wizard Overview
+
+The Solver QuickStart wizard consists of multiple screens depending on your data source and the QuickStart requirements for the selected module. To summarize each step: 
+
+## Step 1: Authenticate
+
+The first step in QuickStart is to provide the necessary information to authenticate to your source system. This could involve providing information such as
+
+- Information about the API, such as the URL and company
+- Username
+- Password
+
+## Step 2: Select the module 
+
+The second step is the select the module and the custom dimensions you'd like to bring into Solver. 
+
+For example, as part of your initial kick off, a user may choose to load the General Ledger data. In many ERPs, the account dimension is considered standard to the General Ledger and is therefore automatically added as a dimension for import as well. However, your organization may also have custom dimensions such as Business Unit that are specific to your business needs. This would be considered a custom dimension and would need to be selected as part of the General Ledger during step 2. 
+
+## Step 3: Startgate
+
+Stargate and the completion of the "stargate mapping" enables the reports in the Template Marketplace to show a P&L and Balance Sheet report in the hierarchy you need to visual data in.  
+
+## Step 4: Import Budget 
+
+If Solver QuickStart supports it and if the selected module has budget data, users will be able to select budget transactions to bring into Solver as well. This is an optional step. 
+
+## Step 5: Schedule and setup notificaitons
+
+In step 5, users choose the time of day that your Job, which is the automatic execution of the above configuration will execute at. It is common that Jobs are scheduled in the early morning, giving enough time for the data load to complete before your first employee clocks in for the day. 
+
+## Step 6: Review and Publish 
+
+The final screen of the wizard lists the configuration that has been completed throughout the wizard for your review. Additionally, users can choose to Save and Publish their work, allowing them to run the data load at another time or allowing them to expand the integration or they can Save and Run, executing Solver QuickStart at that moment. 
