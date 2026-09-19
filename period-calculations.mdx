@@ -1,3 +1,171 @@
 ---
 title: "Period Calculations"
 ---
+
+When designing a Report, the user may need a certain type of Period that is not found in the Period Functions menu. Solver Report Designer (RD) comes with default period calculations (PeriodCalcs) that are available in the Period Function menu found in the RD Navigation pane.
+
+**NOTE:** As of 2/3/2022, the Date function is not supported by Publisher. Please Use PeriodCalc if your report interacts with Publisher.
+
+![](/wp-content/uploads/2023/07/Period-and-Date-Calc-Functions-1-1024x693.png)
+
+This menu may appear as an Icon at the bottom of this menu for users who have access to many modules.
+
+![](/wp-content/uploads/2023/07/Period-and-Date-Calc-Functions-2.png)
+
+### Applying a Period Function
+
+The user can easily apply a Period Function by following these steps:
+
+1. Click on the expanding column or row in the Layout Editor. In many cases, Period is a parameter defined on the Filters tab.
+2. Click on Period Functions in the RD Navigation pane.
+3. Drag the desired function into the Filters tab.  
+   ![](/wp-content/uploads/2023/07/Period-and-Date-Calc-Functions-3.png)
+4. This will replace the Period filter with the Period Function based on the parameter.  
+   ![](/wp-content/uploads/2023/07/Period-and-Date-Calc-Functions-4.png)
+5. In this case, we have dragged in the Function “All Year 2 Years Ago” which will return the entire year, 2 years ago based on the Period parameter provided.
+
+### Applying A PeriodCalc Function
+
+Applying a Period Calc function is slightly different than the out-of-the-box Period Functions.
+
+1. In the Layout Editor, make sure Period is a filter.
+2. From the table below, copy the Expression that relates to the Period Function needed and paste it into the Period filter.
+
+The equivalent of the above formula, but using a PeriodCalc would look like this.  
+![](/wp-content/uploads/2023/07/Period-and-Date-Calc-Functions-5.png)
+
+The tables below detail many available PeriodCalc functions that can be used and combined to achieve the results needed. They are broken into these four sections:
+
+1. Operators: use these with any “built-in function” to achieve the custom period/date range needed
+2. Date Operators: these can be used with any Date function
+3. Built-in functions: a listing of available PeriodCalc examples
+4. Date functions: a listing of available DateCalc examples
+
+### Table: Operators
+
+Below are operators that can be used with PeriodCalcs.
+
+**Note**: Each ERP may have a different syntax for the word “Period” below. Be sure to replace “Period” based on the Period syntax of your ERP.
+
+**Example**: Data Warehouse Reporting uses “Period”, but GP Reporting uses “PostingPeriod”. Therefore, when reporting off GP, in the below examples, replace “Period” with “PostingPeriod”.
+
+|  |  |  |
+| --- | --- | --- |
+| **Expression** | **Example** | **Comments** |
+| Add() | `{PeriodCalc.GetPeriod(Period).Add(-1)}` | Adds designated number of periods. The value can be positive or negative. |
+| AddYears() | `{PeriodCalc.GetPeriod(Period).AddYears(-1)}` | Adds designated number of years. The value can be positive or negative. |
+| WholeYear | `{PeriodCalc.GetPeriod(Period).WholeYear}` | Calculates the entire year range that the *Period* belongs in. |
+| YearStart | `{PeriodCalc.GetPeriod(Period).YearStart}` | Calculates the first period of the year. |
+| YearEnd | `{PeriodCalc.GetPeriod(Period).YearEnd}` | Calculates the last period of the year. |
+| WholeQuarter | `{PeriodCalc.GetPeriod(Period).WholeQuarter}` | Calculates the entire quarter range that the *Period* belongs in. |
+| QuarterStart | `{PeriodCalc.GetPeriod(Period).QuarterStart}` | Calculates the first period of the Quarter. |
+| QuarterEnd | `{PeriodCalc.GetPeriod(Period).QuarterEnd}` | Calculates the last period of the Quarter. |
+| SetIndex() | `{PeriodCalc.GetPeriod(Period).SetIndex(4)}` | Calculates to the designated period number (i.e. 201204). The value must be between 1 and 12. |
+| Extend() | `{PeriodCalc.GetPeriod(Period).Extend(2)}` | Calculates the range beginning with the period plus the number inside the *Extend* operation (i.e. 201201:201203). The value can be positive or negative. |
+
+### Table: Date Operators
+
+Below is a list of date operators that can be used with any Date function.
+
+**Note**: single quotes as shown below are required for Date functions.
+
+|  |  |  |
+| --- | --- | --- |
+| **Expression** | **Example** | **Comments** |
+| AddDays() | `'{Date.AddDays(-7).SqlDate}'` | Adds designated number of days. The value can be positive or negative. |
+| AddMonths() | `'{Date.AddMonths(1).SqlDate}'` | Adds designated number of months. The value can be positive or negative. |
+| AddYears() | `'{Date.AddYears(1).SqlDate}'` | Adds designated number of years. The value can be positive or negative. |
+| Now | `'{PeriodCalc.Now.SqlDate}'` | Calculates the current date. |
+| StartDate | `'{PeriodCalc.GetPeriod(Date).StartDate.SqlDate}'` | Calculates the exact start date of the period that the *Date* parameter belongs in. |
+| EndDate | `'{PeriodCalc.GetPeriod(Date).EndDate.SqlDate}'` | Calculates the exact end date of the period that the *Date* parameter belongs in. |
+| WeekStart | `'{PeriodCalc.Now.WeekStart.SqlDate}'` | Calculates the date of the beginning of the current week (Sunday). |
+
+### Table: Built-in Period Functions
+
+|  |  |  |
+| --- | --- | --- |
+| **Name** | **Description** | **Expression** |
+| CurrentPeriod() | Calculates the Current Period | `{PeriodCalc.CurrentPeriod}` |
+| ALL2Yago | All Year 2 Years Ago | `{PeriodCalc.GetPeriod(Period).AddYears(-2).WholeYear}` |
+| ALL2Yfor | All Year 2 Years Forward | `{PeriodCalc.GetPeriod(Period).AddYears(2).WholeYear}` |
+| All3YAgo | All Year 3 Years Ago | `{PeriodCalc.GetPeriod(Period).AddYears(-3).WholeYear}` |
+| All3YFor | All Year 3 Years Forward | `{PeriodCalc.GetPeriod(Period).AddYears(3).WholeYear}` |
+| AllTimeTD | All Time to Date | `{PeriodCalc.GetPeriod(0)}:{PeriodCalc.GetPeriod(Period)}` |
+| FPLY | First Period Last Year | `{PeriodCalc.GetPeriod(Period).AddYears(-1).YearStart}` |
+| FPNY | First Period Next Year | `{PeriodCalc.GetPeriod(Period).AddYears(1).YearStart}` |
+| FPTY | First Period This Year | `{PeriodCalc.GetPeriod(Period).YearStart}` |
+| LPLY | Last Period Last Year | `{PeriodCalc.GetPeriod(Period).AddYears(-1).YearEnd}` |
+| LPNY | Last Period Next Year | `{PeriodCalc.GetPeriod(Period).AddYears(1).YearEnd}` |
+| LPTY | Last Period This Year | `{PeriodCalc.GetPeriod(Period).YearEnd}` |
+| LY | Last Year (all) | `{PeriodCalc.GetPeriod(Period).AddYears(-1).WholeYear}` |
+| LYTD | Last year to date | `{PeriodCalc.LastYearToDate(Period)}` |
+| NY | Next Year (all) | `{PeriodCalc.GetPeriod(Period).AddYears(1).WholeYear}` |
+| Q1LY | Q1 Last Year | `{PeriodCalc.GetPeriod(Period).AddYears(-1).YearStart.Extend(2)}` |
+| Q1TY | Q1 This Year | `{PeriodCalc.GetPeriod(Period).YearStart.Extend(2)}` |
+| Q2LY | Q2 Last Year | `{PeriodCalc.GetPeriod(Period).AddYears(-1).SetIndex(4).Extend(2)}` |
+| Q2TY | Q2 This Year | `{PeriodCalc.GetPeriod(Period).SetIndex(4).Extend(2)}` |
+| Q3LY | Q3 Last Year | `{PeriodCalc.GetPeriod(Period).AddYears(-1).SetIndex(7).Extend(2)}` |
+| Q3TY | Q3 This Year | `{PeriodCalc.GetPeriod(Period).SetIndex(7).Extend(2)}` |
+| Q4LY | Q4 Last Year | `{PeriodCalc.GetPeriod(Period).AddYears(-1).SetIndex(10)}:{PeriodCalc.GetPeriod(Period).AddYears(-1).YearEnd}` |
+| Q4TY | Q4 This Year | `{PeriodCalc.GetPeriod(Period).SetIndex(10)}:{PeriodCalc.GetPeriod(Period).YearEnd}` |
+| RB12M | 12 Month Rolling (-1 -> -12) | `{PeriodCalc.GetPeriod(Period).Add(-1).Extend(-11)}` |
+| RBC12M | 12Month Rolling Current (0 > -12) | `{PeriodCalc.GetPeriod(Period).Add(0).Extend(-11)}` |
+| RF12M | 12 Months Rolling (+1 -> +12) | `{PeriodCalc.GetPeriod(Period).Add(1).Extend(11)}` |
+| RF36M | 36 Months Rolling (+1 -> +36) | `{PeriodCalc.GetPeriod(Period).Add(1).Extend(35)}` |
+| RF3M1 | 3 Months Rolling (+1 -> +3) | `{PeriodCalc.GetPeriod(Period).Add(1).Extend(2)}` |
+| RF3M2 | 3 Months Rolling (+4 -> +6) | `{PeriodCalc.GetPeriod(Period).Add(4).Extend(2)}` |
+| RF3M3 | 3 Months Rolling (+7 -> +9) | `{PeriodCalc.GetPeriod(Period).Add(7).Extend(2)}` |
+| RF3M4 | 3 Months Rolling (+10 -> +12) | `{PeriodCalc.GetPeriod(Period).Add(10).Extend(2)}` |
+| RFC12M | 12 Months Rolling Current (0 > 12) | `{PeriodCalc.GetPeriod(Period).Add(0).Extend(11)}` |
+| RPLY | Remaining Periods Last Year | `{PeriodCalc.GetPeriod(Period).AddYears(-1).Add(1)}: {PeriodCalc.GetPeriod(Period).AddYears(-1).YearEnd}` |
+| RPTY | Remaining Periods This Year | `{PeriodCalc.GetPeriod(Period).Add(1)}:{PeriodCalc.GetPeriod([]).YearEnd}` |
+| TPLY | This Period Last Year | `{PeriodCalc.GetPeriod(Period).AddYears(-1)}` |
+| TPNY | This Period Next Year | `{PeriodCalc.GetPeriod(Period).AddYears(1)}` |
+| TPTY | This Period This Year | `{PeriodCalc.GetPeriod(Period)}` |
+| TYALL | This Year (all) | `{PeriodCalc.GetPeriod(Period).WholeYear}` |
+| YTD | Year to Date | `{PeriodCalc.FiscYearToDate(Period)}` |
+|  | Quarter to Period | `{PeriodCalc.QuarterStart(Period)}:{@Period}` |
+|  | Next Quarter | `{PeriodCalc.QuarterStart(Period).Add(3)}:{PeriodCalc.QuarterEnd(Period).Add(3)}` |
+|  | Last Quarter | `{PeriodCalc.QuarterStart(Period).Add(-3)}:{PeriodCalc.QuarterEnd(Period).Add(-3)}` |
+|  | All Time to Period | `{PeriodCalc.GetPeriod(0)}:{PeriodCalc.GetPeriod(Period)}` |
+|  | Prior Year Qtr to Period | `{PeriodCalc.GetPeriod(Period).AddYears(-1).QuarterStart}:{PeriodCalc.GetPeriod(Period).AddYears(-1)}` |
+|  | YTD 2 Years Ago | `{PeriodCalc.GetPeriod(Period).AddYears(-2)YearStart}:{PeriodCalc.GetPeriod(Period).AddYears(-2)}` |
+| ToInt() | Returns the date as yyyymmdd | {Date.ToInt()} |
+| AddMinutes() | Returns the date as yyyymmdd | {Date.AddMinutes(1000).SqlDate} |
+| AddHours() | Adds minutes to a date value | {Date.AddHours(10).SqlDate} |
+| Year | Gets the year number of a date | {Date.Year} |
+| Month | Gets the month number of a date | {Date.Month} |
+| Day | Gets the day number of a date | {Date.Day} |
+| DayOfYear | Gets the index of a day in a year (2/1/2026 => 32} | {Date.DayOfYear} |
+
+### Table: Date Functions
+
+Below is a list of functions that require the use of a parameter that is a “Date Lookup”.
+
+**Note**: Date Functions require single quotes as shown below.
+
+|  |  |  |
+| --- | --- | --- |
+| **Name** | Description | **Expression** |
+| Today |  | `'{PeriodCalc.Now.SqlDate}'` |
+| Yesterday |  | `'{PeriodCalc.Now.AddDays(-1).SqlDate}'` |
+| Month to Date |  | `'{PeriodCalc.GetPeriod(Date).StartDate.SqlDate}':{@Date}` |
+| Quarter to Date |  | `'{PeriodCalc.GetPeriod(Date).QuarterStart.StartDate.SqlDate}':{@Date}` |
+| Year to Date |  | `'{PeriodCalc.GetPeriod(Date).YearStart.StartDate.SqlDate}':{@Date}` |
+| Year Start Date |  | `'{PeriodCalc.GetPeriod(Date).YearStart.StartDate.SqlDate}'` |
+| Year End Date |  | `'{PeriodCalc.GetPeriod(Date).YearEnd.EndDate.SqlDate}'` |
+| Period start Date |  | `'{PeriodCalc.GetPeriod(Date).StartDate.SqlDate}'` |
+| Month End Date |  | `'{PeriodCalc.Now.MonthEnd.SqlDate}'` |
+| Quarter Start Date |  | `'{PeriodCalc.GetPeriod(Date).QuarterStart.StartDate.SqlDate}'` |
+| Quarter End Dates |  | `'{PeriodCalc.GetPeriod(Date).QuarterEnd.EndDate.SqlDate}'` |
+| Last Year Current Quarter |  | `'{PeriodCalc.GetPeriod(Date).QuarterStart.Add(-12)}:{PeriodCalc.GetPeriod(Date).QuarterEnd.Add(-12)}'` |
+| Last Year Quarter to Date |  | `'{PeriodCalc.GetPeriod(Date).QuarterStart.StartDate.SqlDate}':'{Date}'` |
+| Last Month to Date |  | `'{PeriodCalc.Now.MonthStart.AddMonths(-1).SqlDate}':'{PeriodCalc.Now.AddMonths(-1).AddDays(-1).SqlDate}'` |
+| Prior Year entire month |  | `'{PeriodCalc.Now.MonthStart.AddYears(-1).AddMonths(0).AddDays(0).SqlDate}':'{PeriodCalc.Now.AddYears(-1).AddMonths(0).AddDays(-1).SqlDate}'` |
+| TertialStart | Calculates first period of a 4-month-interval (if Period is 202607 the result is 202605) | {PeriodCalc.GetPeriod(Period).TertialStart} |
+| TertialEnd | Calculates last period of a 4-month-interval | {PeriodCalc.GetPeriod(Period).TertialEnd} |
+| FiscYear | Gets the year number of a period (202607 => 2026) | {PeriodCalc.GetPeriod(Period).FiscYear} |
+| FiscPer | Gets the year number of a period (202607 => 7) | {PeriodCalc.GetPeriod(Period).FiscPer} |
+| Dates | Gets the daterange of a period (202607=>’2026-07-01’:’2026-07-31’) | {PeriodCalc.GetPeriod(Period).Dates} |
+| ExtendYears() | Calculates the range beginning with the period plus the number of years (202607:202807). The value can be positive or negative. | {PeriodCalc.GetPeriod(Period).ExtendYears(2)} |
+| WholeTertial | 202607 => 202605:202608 | {PeriodCalc.GetPeriod(Period).WholeTertial} |
