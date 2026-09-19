@@ -1,22 +1,33 @@
 ---
 title: "Solver QuickStart"
 sidebarTitle: "Quickstart"
-description: "Solver QuickStart is a wizard driven approach enabling a Solver customer to quickly load data into Solver as part of their implementation. This feature leaverages available APIs and/or custom APIs available in your source system to extract data and load it into Solver in a format that is recommended by Solver subject matter experts (SMEs). With the data loaded in a \"best practice\" format, you can then leverage Solver's template marketplace reports or create reports on your own with confidence that the underlying data is in the correct format. "
+description: "Solver QuickStart is a wizard driven approach enabling a customer to quickly load data into Solver during their implementation. This feature leverages native and/or custom APIs available by your source system to extract data and load it into Solver in a format that is recommended by Solver subject matter experts (SMEs). With the data loaded into Solver in a \"best practice\" format, users can then leverage Solver's Template Marketplace reports or create your own reports with the confidence that the underlying data is in the correct format. "
 mode: "wide"
 ---
 
+<Expandable title='What does Solver QuickStart give me "right out of the box"? '>
+  Solver QuickStart will give you
+
+  1. An integration(s) that will load the prior year and current year to day transactions for a selected module.  
+  2. The default dimensions and the option to choose you custom dimension(s) associate to the above selected module.
+  3. A scheduled job that will execute once a day, as defined by the user when going through QuickStart. 
+
+  The above integrations and job act as a starting point. You can then expand on this starting point, adding additional data and changing the scheduling to meet your business needs. 
+</Expandable>
+
 <Expandable title="What ERPs does Solver QuickStart Support? ">
-  |  | Business Central | Finance and Operatii | D365 Sales and Service | Acumatica | Intacct | Personnel (via Excel file) |
+  |  | Business Central | Finance and Operatip | D365 Sales and Service | Acumatica | Intacct | Personnel (via Excel file) |
   | --- | --- | --- | --- | --- | --- | --- |
-  | General Ledger<br />- Summary and Detail |  |  |  |  |  |  |
-  | Accounts Payable |  |  |  |  |  |  |
+  | General Ledger<br />- Summary and Detail | <Icon icon="circle-check" /> | <Icon icon="circle-check" /> | <Icon icon="circle-check" /> | <Icon icon="circle-check" /> | <Icon icon="circle-check" /> |  |
+  | Accounts Payable | <Icon icon="circle-check" /> |  |  |  |  |  |
   | Accounts Receivable |  |  |  |  |  |  |
   | Fixed Assets |  |  |  |  |  |  |
   | Sales Orders |  |  |  |  |  |  |
   | Sales Invoices |  |  |  |  |  |  |
+  |  |  |  |  |  |  |  |
 </Expandable>
 
-<Expandable title="ERP API Details">
+<Expandable title="Solver QuickStart and Supported Data Sources API Details">
   |  | Custom Extension Required |
   | --- | --- |
   | Business Central | Yes, extension installed from Microsoft AppSource |
@@ -25,3 +36,11 @@ mode: "wide"
   | Intacct | No, uses Intaccts provided API |
   |  |  |
 </Expandable>
+
+<Expandable title="When should i use Solver QuickStart">
+  As a new implementation, it is best to run Solver QuickStart with you initial kickoff of your implementation. Talk to your Solver Partner and/or implementation consultant for more information. 
+
+  The general rule of thumb is to run Solver QuickStart for at least the General Ledger during your kick off. If Solver QuickStart supports additional modules for your data source, it is recommended to run QuickStart for these modules as well. 
+</Expandable>
+
+W
