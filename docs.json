@@ -283,7 +283,8 @@
           {
             "group": "Hybrid Reporting",
             "pages": [
-              "hybrid-reporting"
+              "hybrid-reporting",
+              "hybrid-agent-installation"
             ]
           }
         ]
