@@ -88,8 +88,6 @@
           "platform/quickstart",
           "platform/key-concepts",
           "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions",
           {
             "group": "Reporting",
             "pages": [
@@ -150,6 +148,13 @@
           },
           {
             "group": "Settings and Administration",
+            "pages": [
+              "platform/configuration/user-management",
+              "platform/administration/roles-permissions"
+            ]
+          },
+          {
+            "group": "Agent Studio",
             "pages": []
           }
         ]
