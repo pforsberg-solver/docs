@@ -1,3 +1,114 @@
 ---
 title: "Workflow"
 ---
+
+# Workflow
+
+Workflow is a tool that allows users to collaborate on work products and facilitate assignments throughout the planning and reporting process. With workflow, users have the freedom to design a process that contains as many relevant steps as needed for the required number of users. This tool can also be used as a task tracker with capabilities for monitoring and approving assignments within the application.
+
+### Permissions
+
+To utilize or be assigned to a workflow, a user must have a specific set of permissions enabled for their user as well as appropriate data access permissions set and a contributor or standard license.
+
+Workflow Assigners:
+
+* Can Manage Report and Input Templates
+* Can Run Input Templates
+* Can Manage Planning Workflows
+* Can Submit Assignments
+
+Workflow Assignees:
+
+* Can Submit Assignments
+
+## **Workflow States**
+
+Users’ workflows are separated into three different states:
+
+* **Completed**– Workflows that have had all assignments completed and/or the time set for this workflow to be completed has lapsed. Workflows that have expired will be listed here, regardless of their progress.
+* **Drafts**– Workflows that a user has begun to configure but has not published or completed all the necessary fields to publish.
+* **Published**– Workflows that have been configured, published, and are in progress.
+
+## **Navigating to Workflows**
+
+* Select the Workflows tab from the left side menu on the Solver landing page.
+* Click the plus symbol in the upper-right corner of the page to open the workflow configuration page.
+
+## **Setting up a Workflow**
+
+Configuring a workflow requires several types of information, such as:
+
+* Properties- The logistical details of the workflow.
+* Template selection- The reports that are contained within the workflow.
+* User selection- Users being assigned to complete specific parts of the workflow.
+
+### Properties
+
+![](/wp-content/uploads/2025/07/workflow_2-1024x286.png)
+
+This section of the workflow setup contains the basic necessary information required to create the workflow, including a name, date parameters, and a time zone. This information is crucial in ensuring that all users involved in this process have clear start and due dates that align with the assigners’ expectations.
+
+### Workflow Setup
+
+![](/wp-content/uploads/2025/07/workflow_3.png)
+
+The next section of the setup process contains the Solver elements that assignees will be working on. Here, users will select templates that they have either created or downloaded from the template marketplace, which need to be customized to suit their organization’s needs for the planning or reporting process. Within this section, users will select an integration from their data warehouse connectors that contains the data that will be used for the templates being worked on.
+
+Once the templates have been selected, users must select the default parameter to be used with these reports. The options to select will differ based on the template; however, users can allow the assignee to decide the parameters by choosing the “Let the user decide” box, found below the parameter selection. Each template must be assigned to one or more users in order to move on to the next part of the setup process.
+
+### Reviewers and Approvers
+
+![](/wp-content/uploads/2025/07/workflow_4-1024x587.png)
+
+With the workflow parameters established and the assignees attached to the selected templates, users will now be required to appoint reviewers and or approvers to the workflow. Doing so allows for the information in the templates to be viewed or tweaked by some or many users within an organization.
+
+Depending on the project’s needs, users can assign up to one reviewer and five levels of approvers to a workflow. When assigning other users to a level of approver, users can allocate this to a single user or multiple users by selecting a pre-configured role. This selection can be made for up to 5 levels, but all approvals must be completed in order. However, if a role that contains multiple users is assigned to the approver level, only one of these users must approve the assignment before it moves on to the next level of approver. These must be done in sequential order to complete the workflow.
+
+### Rejections
+
+![](/wp-content/uploads/2025/07/workflow_5-1024x615.png)
+
+If an approver decides to reject the assignment, it will be returned to the initial assignee. It must then undergo the entire reviewing and approval process again, following the same path as before. The reviewer or approver who rejects the assignment will be required to leave a comment explaining why they rejected it, to trigger a return to the start of the process. This can be done as many times as necessary to allow the assignment to complete the workflow. If an assignment is rejected, it will be returned to the assignee without changing the data that had been submitted.
+
+### Workflow Changes
+
+Once the workflow set-up process has been completed, few changes can be made to the workflow. These include minor changes, such as due dates and start dates. You, however, cannot change user assignments, add or remove templates and users, or make changes to reviewers and approvers. To make any significant changes, users must duplicate the workflow, edit a draft, and then republish.
+
+## Workflow Status
+
+Once the Workflow set-up process has been completed, users can navigate to the workflow status page to view the progress made as well as other information about the Workflow. This can be found under the workflow menu, where you select the workflow from the list provided and click the Status icon located at the top of the workflow menu bar.
+
+On the Workflow Status page, users can find a card view of the assignments, sorted into one of four categories: Not started, In progress, awaiting approval, and completed. The card view of the assignment displays the title of the template, its parameters, and the assignee. This page also shows the progress percentage completed of the workflow and the actual number of assignments remaining to be completed. These cards will automatically update as the assignment progresses through the workflow process.
+
+Users also have the ability to filter or search for assignments within the workflow that fall under a specific status or user, as well as the template that is a part of the assignment, by using the filter menu on the left side of the screen or the search bar above the workflow title.
+
+## Completing a Workflow
+
+If you have been assigned a Workflow, you will receive a notification that you have a new assignment. To complete this assignment as an assignee,
+
+* Navigate to the Assignments menu.
+* Select the Workflow for which you received the Assignment.
+* Click the card of the Assignment you would like to work on.
+* Use the parameters provided to customize the template and save the data.
+* Run the report.
+* Once you are satisfied with the report, click the complete assignment button at the top of the page.
+* Once you have completed the assignment, it will be moved to the Awaiting Review section of the Assignments page.
+* If the assignment is reviewed by the reviewer or approver and rejected, you will receive a notification containing a comment to inform you of the changes needed to be made to the report before it can be approved. It will then require you to return to the assignment and make any necessary changes before completing it again.
+
+To complete an assignment as a Reviewer/Approver:
+
+* Navigate to the Assignments menu.
+* Select the Workflow for which you received the Assignment.
+* Click the card of the Assignment you would like to work on from the awaiting approval section.
+* Review the template, make edits (if you have permission to do so), or run the report using the run now button.  
+  ![](/wp-content/uploads/2025/07/workflow_6.png)
+* If the report has satisfied requirements, click the Mark as reviewed button at the top of the page. If it has not, select the reject button and type a comment in the window that appears and select reject when completed.
+* The assignment will now proceed to the next step of the workflow or revert to the beginning if rejected.
+
+## Notifications
+
+Workflow users will receive notifications through the entire process depending on their role within the workflow.
+
+Assignees will be notified via toast notification, the notification menu, and email, depending on their user settings. They will be notified when assignments are ready to be started, the due date, and as the assignment moves along the workflow process.
+
+Reviewers and Approvers will be notified via the same means, depending on their user settings, but only when it is their turn to act during the workflow process. However, if the approver is part of a role and another approver completes the action before them, they will not be notified of a change.
