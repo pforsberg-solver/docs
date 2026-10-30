@@ -32,7 +32,7 @@ The Hybrid Agent installer is downloaded from within Solver.
 Keep this screen open, we will be coming back to it later.
 
 ## Installing the Hybrid Agent
-Once the download is complete, navigate to the folder location you saved the executable. The instalation creates a small web page on port 5002.
+Once the download is complete, navigate to the folder location you saved the executable. The installation creates a small web page on port 5002.
 
 1. As an administrator, run the executable. First screen is the Welcome screen and begins the installation process. Click Next
 2. The installation will begin and should complete in seconds.
@@ -43,8 +43,8 @@ Should you need to do any maintenance or change the configuration of your connec
 
 ### Add a Data Source
 
-1. From within the Hybrid Agent web page (localhost:5002), click **Add data source
-   **NOTE:**If you are using a proxy server, click the **Settings**button to access the proxy server settings.
+1. From within the Hybrid Agent web page (localhost:5002), click **Add data source** 
+   1. If you are using a proxy server, click the **Settings** button to access the proxy server settings.
 2. In the **Server name** field, enter the name of your SQL server. IP address is okay as well.
 3. In the **Database** field, enter the database name of your ERP master database.
 4. Under **Authentication**, select **SQL Server Authentication** or **Windows Authentication**\*. If you select SQL Server Authentication, you must fill in your **Login** **name** and **Password**.
@@ -59,14 +59,14 @@ Next, you must set up a connection to your data from Solver. To setup a connecti
 1. Be sure that you still have the pairing key that was generated earlier in the installation.
 2. If you are not already on the Data Connections menu, click Settings > Data Connections and click New in the upper left-hand corner.
    * If you do not see this menu option, you need to be granted “Can manage connections” permissions by an administrator.
-3. If no connections have been made, in the popup that appears choose the integration for your ERP system.![](/wp-content/uploads/2021/03/Snag_d5aaf59.png)Click Next
-4. You will be prompted for your Pairing key, paste it in. ![Hybrid_step2](/wp-content/uploads/2023/03/image-2.png)
+3. If no connections have been made, in the popup that appears choose the integration for your ERP system.
+4. Click Next
+5. You will be prompted for your Pairing key, paste it in. 
 5. There is the option to allow others to edit/modify this connection. Enable this option only if others with “can manage connections” permissions should modify this.
 6. You will then be prompted to select the companies that should be made available in Solver.
-7. The number of companies available is based on the number of companies purchased.![](/wp-content/uploads/2021/03/Snag_d5e4419.png)
-8. Create a name for the Connection. It is recommended to do a descriptive name identifying where the Hybrid Agent has been installed for troubleshooting purposes. ![](/wp-content/uploads/2021/03/Snag_d60611d.png)
-
-Click Finish. The connection has now been established and you can begin to create your first report.
+7. The number of companies available is based on the number of companies purchased.
+8. Create a name for the Connection. It is recommended to do a descriptive name identifying where the Hybrid Agent has been installed for troubleshooting purposes. 
+10. Click Finish. The connection has now been established and you can begin to create your first report.
 
 As a reminder, for non-administrator users, you will need to setup company and data access permissions for each end user or role that should have access to this data. By default, all non-administrators have no permissions to the data. This can be configured in Settings > Administration > User and Roles tabs.
 
@@ -84,17 +84,15 @@ You can change the Solver Cloud Agent service account. By default, this is set u
 5. Enter the account name and password.
 6. Click **OK**.
 
-![](/wp-content/uploads/2021/03/h3.png)
-
 **NOTE:** The account you set up here is also the account that needs permission to access the path(s) where the vouchers are stored.
 
-## Uninstalling the Hybrid Agent
+## Uninstalling Hybrid Agent
 
 To uninstall the Hybrid Agent
 
 1. Log into the computer where the Hybrid Agent was installed
-2. Navigate to Control Panel > Programs and Features
-3. Search the list for “Solver Cloud Agent”
+2. Navigate to **Control Panel** > **Programs and Features**
+3. Search the list for “**Solver Cloud Agent**”
 4. Choose Uninstall
 
 Upon completing the uninstall process, the Solver Hybrid Agent is removed from the computer and no longer connected to Solver. Any reports, input template or Ad Hoc report connected to a connection created via the hybrid agent will no longer work
