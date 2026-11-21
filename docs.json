@@ -23,20 +23,16 @@
   "navbar": {
     "links": [
       {
-        "href": "/Report Templates",
-        "label": "Reporting"
+        "href": "/Getting Started",
+        "label": "Product Help"
       },
       {
         "href": "/Input Templates",
-        "label": "Planning"
+        "label": "Implementation Guides"
       },
       {
         "href": "/Data Warehouse",
-        "label": "Data Warehouse"
-      },
-      {
-        "href": "/ERP Specific Material",
-        "label": "Integrations"
+        "label": "API"
       }
     ],
     "primary": {
@@ -77,85 +73,158 @@
               "updateSchedule"
             ]
           },
-          "releaseNotes_bcExtension"
+          "releaseNotes_bcExtension",
+          {
+            "group": "Untitled Group",
+            "pages": []
+          }
         ]
       },
       {
-        "group": "Product Documentation",
-        "icon": "layers",
-        "expanded": true,
+        "group": "Reporting & Analytics",
         "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          {
-            "group": "Reporting",
-            "pages": [
-              "rd",
-              "rt",
-              "period-calculations"
-            ]
-          },
-          {
-            "group": "Input Templates",
-            "pages": [
-              "it-creation-via-rd",
-              "it",
-              "workflow",
-              "asisgnments",
-              "input-flow"
-            ]
-          },
           {
             "group": "Agent Studio",
             "pages": []
           },
+          "rd",
+          "rt",
+          "period-calculations"
+        ]
+      },
+      {
+        "group": "Planning & Budgeting",
+        "pages": [
+          "it-creation-via-rd",
+          "it",
+          "workflow",
+          "asisgnments",
+          "input-flow"
+        ]
+      },
+      {
+        "group": "Data & Integrations",
+        "pages": [
           {
             "group": "Connector Studio",
             "pages": []
           },
+          "platform/quickstart",
+          "Integrations",
           {
-            "group": "Data Warehouse",
+            "group": "Data Sources",
             "pages": [
               {
-                "group": "Data",
+                "group": "Acumatica",
                 "pages": [
-                  "Integrations",
-                  "rules",
-                  "jobs",
-                  "event-log"
+                  "acumatica-gettingStarted",
+                  "acumatica-qs"
                 ]
               },
               {
-                "group": "Currency",
+                "group": "D365 Business Central",
                 "pages": [
-                  "monthly-rates",
-                  "rate-types",
-                  "rate-type-configuration"
+                  "bc-gettingStarted",
+                  "d365BC-qs",
+                  "solverBcExtension"
                 ]
               },
               {
-                "group": "Configuration",
+                "group": "D365 Finance and Operations",
                 "pages": [
-                  "dimensions",
-                  "modules",
-                  "module-schema",
-                  "period-config",
-                  "api"
+                  "d365fo-gettingStarted",
+                  "d365FO-qs"
+                ]
+              },
+              {
+                "group": "D365 Sales and Service",
+                "pages": [
+                  "d365CRM-gettingStarted",
+                  "d365CRM-qs"
+                ]
+              },
+              "untitled-page-18",
+              {
+                "group": "Hubspot",
+                "pages": [
+                  "hubspot-gettingStarted"
+                ]
+              },
+              {
+                "group": "Microsoft Fabric",
+                "pages": [
+                  "fabric-gettingStarted"
+                ]
+              },
+              {
+                "group": "Netsuite",
+                "pages": [
+                  "netsuite-gettingStarted",
+                  "saved-search"
+                ]
+              },
+              {
+                "group": "QuickBooks Online",
+                "pages": [
+                  "qbo-gettingStarted"
+                ]
+              },
+              {
+                "group": "Sage Intacct",
+                "pages": [
+                  "intacct-gettingStarted",
+                  "intacct-qs"
+                ]
+              },
+              {
+                "group": "SAP ByDesign",
+                "pages": [
+                  "sapByDesign-gettingStarted"
+                ]
+              },
+              {
+                "group": "Zendesk",
+                "pages": [
+                  "zendesk-gettingStarted"
+                ]
+              },
+              {
+                "group": "Salesforce",
+                "pages": [
+                  "salesforce-gettingStarted"
+                ]
+              },
+              {
+                "group": "SAP Business One",
+                "pages": [
+                  "sapB1-gettingStarted"
                 ]
               }
             ]
           },
           {
-            "group": "Settings and Administration",
+            "group": "Hybrid Reporting",
             "pages": [
-              "platform/configuration/user-management",
-              "platform/administration/roles-permissions"
+              "hybrid-reporting",
+              "hybrid-agent-installation"
             ]
+          }
+        ]
+      },
+      {
+        "group": "Settings and Administration",
+        "pages": [
+          "platform/configuration/user-management",
+          "platform/administration/roles-permissions",
+          {
+            "group": "Monitoring",
+            "pages": []
           },
           {
-            "group": "Agent Studio",
-            "pages": []
+            "group": "Developer Resources",
+            "pages": [
+              "api"
+            ]
           }
         ]
       },
@@ -193,101 +262,7 @@
       },
       {
         "group": "ERP Specific Material",
-        "pages": [
-          {
-            "group": "Acumatica",
-            "pages": [
-              "acumatica-gettingStarted",
-              "acumatica-qs"
-            ]
-          },
-          {
-            "group": "D365 Business Central",
-            "pages": [
-              "bc-gettingStarted",
-              "d365BC-qs",
-              "solverBcExtension"
-            ]
-          },
-          {
-            "group": "D365 Finance and Operations",
-            "pages": [
-              "d365fo-gettingStarted",
-              "d365FO-qs"
-            ]
-          },
-          {
-            "group": "D365 Sales and Service",
-            "pages": [
-              "d365CRM-gettingStarted",
-              "d365CRM-qs"
-            ]
-          },
-          "untitled-page-18",
-          {
-            "group": "Hubspot",
-            "pages": [
-              "hubspot-gettingStarted"
-            ]
-          },
-          {
-            "group": "Microsoft Fabric",
-            "pages": [
-              "fabric-gettingStarted"
-            ]
-          },
-          {
-            "group": "Netsuite",
-            "pages": [
-              "netsuite-gettingStarted",
-              "saved-search"
-            ]
-          },
-          {
-            "group": "QuickBooks Online",
-            "pages": [
-              "qbo-gettingStarted"
-            ]
-          },
-          {
-            "group": "Sage Intacct",
-            "pages": [
-              "intacct-gettingStarted",
-              "intacct-qs"
-            ]
-          },
-          {
-            "group": "Salesforce",
-            "pages": [
-              "salesforce-gettingStarted"
-            ]
-          },
-          {
-            "group": "SAP Business One",
-            "pages": [
-              "sapB1-gettingStarted"
-            ]
-          },
-          {
-            "group": "SAP ByDesign",
-            "pages": [
-              "sapByDesign-gettingStarted"
-            ]
-          },
-          {
-            "group": "Zendesk",
-            "pages": [
-              "zendesk-gettingStarted"
-            ]
-          },
-          {
-            "group": "Hybrid Reporting",
-            "pages": [
-              "hybrid-reporting",
-              "hybrid-agent-installation"
-            ]
-          }
-        ]
+        "pages": []
       }
     ]
   }
