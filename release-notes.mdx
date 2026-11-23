@@ -13,19 +13,19 @@ mode: "wide"
    - Expanded audit actions to include many actions on the administration page. Details can be found [here](https://help.app.solverglobal.com/knowledge-base/audit-log/#audit-log-features).
    - Audit log will display the last 60 days of history.
      - Contact Solver Support if you need audit history older than 60 days.
-     - Solver retains a rolling 365 days worth of audit logs.
+     - Solver retains a rolling 365 days' worth of audit logs.
    - Support export to .csv of the Audit Log.
 3. Update user interface for [creating and maintaining Data Warehouse trees](https://help.app.solverglobal.com/knowledge-base/361-data-warehouse/#dimension-trees).
    - Replace the “click to drag” experience with a drag and drop experience.
    - Update action bar to align with the rest of the application.
      - Save is moved to the primary action bar.
-     - Delete tree is move to the more actions button.
+     - Delete tree is moved to the more actions button.
 
 ### Bug Fixes
 
 #### Data Warehouse
 
-1. Prevent users from change the fiscal label after periods have been created.
+1. Prevent users from changing the fiscal label after periods have been created.
 2. Add Last Ran By to Integrations information panel.
 3. Add Number of Steps to Jobs information panel.
 4. Dropdown on rollup attributes is cut off when the rollup attribute is the last one on the screen.
@@ -50,8 +50,8 @@ mode: "wide"
 #### Settings and Administration
 
 1. Audit Log
-   - Rename Datahouse\_Copy\_Created to Create\_Datawarehouse\_Copy.
-   - Raname Datawarehouse\_Copy\_Downloaded to Download\_Datawarehouse\_Copy.
+   - Rename Datawarehouse\_Copy\_Created to Create\_Datawarehouse\_Copy.
+   - Rename Datawarehouse\_Copy\_Downloaded to Download\_Datawarehouse\_Copy.
    - Log more information to the Audit Log.
    - Customer Admins should always have access to the Audit Log.
    - Add date selector to Audit Log for improved filtering.
@@ -59,9 +59,9 @@ mode: "wide"
 2. Redirect user properly when they have bookmarked the invite URL.
 3. Remove unnecessary information from database download filename.
 4. Improve table filtering experience in various screens.
-5. Resolve errors access administration menu for some users.
+5. Resolve errors accessing the administration menu for some users.
 6. Ensure extensions are appearing on the administration screen.
-7. Resolve issues where a user cannot override password provided by their browsers password manager.
+7. Resolve issues where a user cannot override password provided by their browser's password manager.
 
 ## July 24, 2026 (Week 30)
 
@@ -69,12 +69,12 @@ mode: "wide"
 
 #### Reporting
 
-1. For new customers: When users apply a filter that should exclude 0 dollars, ensure that amounts that sum up to zero are also not show.
+1. For new customers: When users apply a filter that should exclude 0 dollars, ensure that amounts that sum up to zero are also not shown.
    - Existing customers must request this feature be enabled.
 
 #### Data Warehouse
 
-1. Ensure Data Explorer respects users browser zoom setting
+1. Ensure Data Explorer respects the user's browser zoom setting
 
 ## July 10, 2026 (Week 28)
 
@@ -91,7 +91,7 @@ mode: "wide"
 
 #### Data Warehouse and Connectors
 
-1. Netsuite: Unable to authenticate using token based authentication
+1. NetSuite: Unable to authenticate using token based authentication
 2. Rollup attributes dropdown can be cut off
 3. Fix sort order of rollups
 
@@ -115,11 +115,11 @@ mode: "wide"
 ### New Features and Enhancements
 
 1. [Content Manager](https://help.app.solverglobal.com/knowledge-base/content-manager/): A new, administrative menu enabling users to see all items within the tenant.
-   - In the initial release of Content Manager, only Reports Templates, Input Templates and their associated categories are shown in Content Manger. Future updates will add support for other items in your Solver tenant.
+   - In the initial release of Content Manager, only Reports Templates, Input Templates and their associated categories are shown in Content Manager. Future updates will add support for other items in your Solver tenant.
 2. Freeze first row (headers) of the drilldown sheet in the Portal
 3. User Interface Updates
    - Data Warehouse Data menus have an improved look with
-     - Unified and aligned action bar with primary actions (New, Run & Edit) easily visable and secondary actions moved to under the Options button.<img src="/wp-content/uploads/2021/03/Snag_5374095-e1781821470361.png" alt="" />
+     - Unified and aligned action bar with primary actions (New, Run & Edit) easily visible and secondary actions moved to under the Options button.<img src="/wp-content/uploads/2021/03/Snag_5374095-e1781821470361.png" alt="" />
      - Widen the Name column across all menus to more easily see the integration name.
    - Minor user interface alignment and updates to the following menus
      - Custom Drilldown
@@ -136,7 +136,7 @@ mode: "wide"
 
 **Report and Input Templates**
 
-1. Resolve issues where a users is unable to unshared a report category
+1. Resolve issues where a user is unable to unshare a report category
 2. Improve calculations when using the Analysis Agent.
 
 **Data Warehouse**
@@ -158,19 +158,7 @@ mode: "wide"
 - Fixed an issue where users were able to press the save button on a job without making any changes to that job.
 - Fixed an issue with the D365 Business Central connector that users were experiencing, where their data was not rendering if the first result had no lines detail.
 
-## April 2nd, 2026 (Week 14)
-
-### New Features and Enhancements
-
-- **Ad Hoc Pivot.** Improvements were made to the pivot function within Ad Hoc to make it clearer which fields are used in the pivot.
-
-### Bug Fixes
-
-- **Academy Access.** Resolves an issue where users were unable to access the training academy from the portal.
-- **Ad Hoc Stability.** Resolves a scenario where the browser would become unresponsive under specific circumstances.
-- **Archive Playlist Order**. Fixes an issue where the archive would show an incorrect playlist order.
-
-# April 24th, 2026 (Week 17)
+## April 24th, 2026 (Week 17)
 
 ### Features and Enhancements
 
@@ -194,8 +182,15 @@ mode: "wide"
 
 ## April 2nd, 2026 (Week 14)
 
+### New Features and Enhancements
+
+- **Ad Hoc Pivot.** Improvements were made to the pivot function within Ad Hoc to make it clearer which fields are used in the pivot.
+
 ### Bug Fixes
 
+- **Academy Access.** Resolves an issue where users were unable to access the training academy from the portal.
+- **Ad Hoc Stability.** Resolves a scenario where the browser would become unresponsive under specific circumstances.
+- **Archive Playlist Order**. Fixes an issue where the archive would show an incorrect playlist order.
 - Fixed an issue where navigating to the Data Warehouse Overview menu would sometimes result in an infinite spinner that prevented users from interacting with the page.
 - Fixed an issue with the NetSuite connector that was occurring when users attempted to run an integration that contained custom field functions AND didn’t apply summary types. This would result in duplicate data.
 
@@ -230,7 +225,7 @@ mode: "wide"
   - Data Explorer will load the first 10k rows of data
     - The filters tab will now open automatically with the option to filter on the current period.
   - Data Explorer now supports paging, allowing users to view all data in the module based off the filters applied.
-    - The number or rows per page is configurable, with support for 1k, 5k, 10k, 50k, and 100k rows per page
+    - The number of rows per page is configurable, with support for 1k, 5k, 10k, 50k, and 100k rows per page
   - Filter values are no longer case-sensitive
   - Data explorer columns now auto-size to a set limit, allowing users to more easily view the data without having to manually widen each column.
 - **Solver Copilot with Finnish Translations**: Added Finnish translations when using Solver Copilot.
@@ -250,12 +245,12 @@ mode: "wide"
     - **Banner Notifications User Experience Issue:** Fixes an issue that prevented users from scrolling in Data Explorer when banner notifications were displayed.
   - **Job Scheduling Issue**: Fixes an issue that prevented users from clicking the Set Schedule and Click Here buttons when creating a new job.
   - **Additional Fiscal Years Issue**: Fix various scenarios where users are unable to add fiscal years in the period configuration wizard.
-  - **API Error Message Issue**: Fixes a wording issue when a users enables the Solver Data API results in an error message.
+  - **API Error Message Issue**: Fixes a wording issue when a user enables the Solver Data API results in an error message.
   - **Editing Label Names Issue**: Improved user experience when editing names of dimensions, modules, and attributes by setting focus in the text box upon clicking New or Edit.
   - **Task Mapping Name Issue**: Fixes an issue in the task mapper where renaming an attribute prevented the previous name from being used for other attributes.
   - **Task Mapping Duplication Issue**: Fixes an issue in the integration task mapper that allowed users to accidentally duplicate a task mapping.
   - **Period Configuration Scrolling Issue**: Fixes an issue that prevented users from scrolling past the screen to add a fiscal year in period configuration.
-  - **Support Job Names with Apostrophe’s**: Fixes an issue with QuickStart jobs where users were unable to complete an integration if their companyID included an apostrophe.
+  - **Support Job Names with Apostrophes**: Fixes an issue with QuickStart jobs where users were unable to complete an integration if their companyID included an apostrophe.
   - **Improved Character Limit Error Messaging**: Updated error messages related to character limits to reflect proper numbers.
 - **Report Templates**
   - **Report Dropdown Issue**: Fixes an issue with checklist parameters where typing in the search box to select a parameter on the report viewing screen would cause the dropdown menu to close without making a selection.
@@ -267,27 +262,12 @@ mode: "wide"
   - **License Distribution Issue**: Fixes an issue with the Implementor’s license, which was also being tracked as a Standard license on the license allocation screen.
   - **Danish Translations Issue**: Fixes an issue with Danish translations related to variables in reporting and custom drilldown.
 
-## January 14th, 2026 (Week 3)
-
-## New Features and Enhancements
-
-- Minor enhancements to the Data Explorer, including:
-  - **Filter Error Message**: Updated error messaging to inform users when they are applying a filter that returns no results.
-
-### Bug Fixes
-
-- Fixes several issues with the Data Explorer, including:
-  - **Duplicated Values Issue**: Fixes an issue where adding values to a filter caused a duplicate of the original value to be included in addition to the newly selected values.
-  - **Range of Values Filtering Issue**: Fixes an issue where changing the previously applied values on a filter when using a range of values would not update the displayed data.
-  - **Deleting Data Issue**: Fixes an issue that occurred when attempting to delete a large number of rows.
-  - **Row Count Issue**: Fixes an issue where the row count was not displaying for German, Danish, and Norwegian users.
-
 ## January 23rd, 2026 (Week 4)
 
 ### New Features and Enhancements
 
 - **Solver Copilot Update**: The newest Solver AI feature, Solver Copilot Analysis Agent, is now available for all users.
-  - This new agent allows for context-based analysis of a user’s reports. For more information, [see our article](https://help.app.solverglobal.com/knowledge-base/copilot-analysis-agent/)on this exciting new feature.
+  - This new agent allows for context-based analysis of a user’s reports. For more information, [see our article](https://help.app.solverglobal.com/knowledge-base/copilot-analysis-agent/) on this exciting new feature.
     - This must be enabled by Customer Administrators in the settings menu and applies to all tenants.
     - This feature is available for use with Report and Input Templates and Report Archive.
 - **Copilot Error Messaging**: Improved error messaging around non-compliant copilot requests.
@@ -295,7 +275,7 @@ mode: "wide"
 - **Email Address Editing**: Added the ability for customer administrators to change a tenant user’s email address and username in Solver.
   - Doing so will send a notice to the new email as well as the previous address.
 - **Smaller Window Breadcrumb Compatibility**: Added the ability for users to view breadcrumbs when navigating from an open template to the list of templates on smaller windows.
-- **NetSuite Memory Management Update**: Improved memory management in the new version of the NetSuite connector(v1.2.3).
+- **NetSuite Memory Management Update**: Improved memory management in the new version of the NetSuite connector (v1.2.3).
 - **Added Finnish Language to Solver**: Finnish translations are now supported across Solver.
 - **Implementor license** – Users with an implementor license can now be selected as a publisher recipient.
 
@@ -316,3 +296,18 @@ mode: "wide"
   - Fixes an issue that prevented users from copying answers from Copilot and pasting them into their notepad.
   - Fixes an issue where opening the Copilot side menu alongside a report did not automatically resize the report to fit the available space.
 - **Implementor license** – Addresses an issue where adding a user with an Implementor license to a role would prevent the role from being selected as a publisher recipient.
+
+## January 14th, 2026 (Week 3)
+
+### New Features and Enhancements
+
+- Minor enhancements to the Data Explorer, including:
+  - **Filter Error Message**: Updated error messaging to inform users when they are applying a filter that returns no results.
+
+### Bug Fixes
+
+- Fixes several issues with the Data Explorer, including:
+  - **Duplicated Values Issue**: Fixes an issue where adding values to a filter caused a duplicate of the original value to be included in addition to the newly selected values.
+  - **Range of Values Filtering Issue**: Fixes an issue where changing the previously applied values on a filter when using a range of values would not update the displayed data.
+  - **Deleting Data Issue**: Fixes an issue that occurred when attempting to delete a large number of rows.
+  - **Row Count Issue**: Fixes an issue where the row count was not displaying for German, Danish, and Norwegian users.
