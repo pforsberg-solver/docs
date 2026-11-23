@@ -11,7 +11,6 @@ Before beginning a QuickStart integration with Microsoft D365 CRM, there are a 
 * **Users must have access to their Dynamics 365 Sales and Service URL before beginning this process.** If you do not know this URL, please contact your Microsoft D365 Administrator.
 * Popup blockers should be disabled to allow for the D365 CRM authentication screen to appear in the QuickStart wizard.
 
-For the latest information on data sources available through the QuickStart process for D365 CRM and the other supported ERPs, please reference [this article](https://solver-help-a8a6hpf2cnbgekbj.centralus-01.azurewebsites.net/knowledge-base/quickstart-features/) on QuickStart features.
 
 QuickStart for D365 CRM brings in the following CRM information:
 
@@ -28,14 +27,10 @@ If you have administrative access to edit permissions in D365,
 
 1. Sign in to your D365 account.
 2. Click the **Settings icon** from the toolbar.  
-   ![](/wp-content/uploads/CRM_Configuration_1.png)
 3. Select **Advanced Settings** from the settings dropdown menu.
 4. Under the System menu, click **Security**.  
-   ![](/wp-content/uploads/CRM_Configuration_2.png)
 5. From the Security Role list, select the pre-determined role name (ex: **Solver API**) to edit the permissions. This can be an existing or new role.   
-   ![](/wp-content/uploads/CRM_Configuration_3.png)
 6. Change the permissions to **Read** by clicking the circle under the relevant row.  
-   ![](/wp-content/uploads/CRM_Configuration_4.png)
 7. Press **Save and Close** to confirm the permissions that have been changed. Once these settings have been saved, security settings will be immediately inherited and users will be able to begin their QuickStart integration.
 
 **The required permissions include:**
@@ -57,23 +52,15 @@ To create a QuickStart integration:
 2. Select the **Add New** button from the upper right-hand corner of this screen to open the connector marketplace.
 3. Select **Dynamics 365 Sales and Service**.
 4. Click the **Create QuickStart** button.  
-   ![](/wp-content/uploads/CRM_QSWizard_8.png)
-5. Input your **Dynamics 365 Sales and Service URL** into the text box (ex: https://<yourD365URL>.com/). Once the URL has been verified, click the **Authenticate** button when it turns blue.  
-   ![](/wp-content/uploads/CRM_QSWizard_1.png)
+5. Input your **Dynamics 365 Sales and Service URL** into the text box (ex: https://yourD365URL.com/). Once the URL has been verified, click the **Authenticate** button when it turns blue.  
 6. Select an **Environment** from the dropdown menu in the wizard and press **Authenticate** to begin logging into your Microsoft CRM account.
    * Ensure that your pop-up blockers have been disabled.  
-     ![](/wp-content/uploads/CRM_QSWizard_2.png)
 7. Once the pop-up appears, choose an account and enter your password to continue with the authentication process.  
-   ![](/wp-content/uploads/CRM_QSWizard_3.png)
 8. Once you have successfully logged in to your Microsoft account, you will be returned to the wizard to confirm the authentication process has been completed.  
-   ![](/wp-content/uploads/CRM_QSWizard_4.png)
 9. Next, select the data you would like to import.
    * At this time, only the Opportunities data is available for QuickStart.  
-     ![](/wp-content/uploads/CRM_QSWizard_5.png)
 10. Schedule a job to run your integration.  
-    ![](/wp-content/uploads/CRM_QSWizard_6.png)
 11. Review the selected data and click **Run Now** to run your integration.  
-    ![](/wp-content/uploads/CRM_QSWizard_7.png)
 12. Visit the Job page to confirm or make any changes to your scheduled Job.
 
 Following a completed job, you can find many flexible templates for your CRM data in the Template Marketplace.
