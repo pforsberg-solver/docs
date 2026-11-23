@@ -1,8 +1,7 @@
-:root /*{
-  --content-width: 38rem; 
-}*/
-
-[data-layout-item="side-panel"] {
-  margin-left: auto;
+:root {
+  --content-width: 48rem; /* overwriting default of 36rem */
 }
+
+[data-layout-item="content"] {
+  margin-inline: auto;
 }
