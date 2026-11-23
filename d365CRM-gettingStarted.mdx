@@ -1,3 +1,51 @@
 ---
 title: "Getting Started"
 ---
+This article will detail Solver’s integration with Dynamics D365 Sales and Service. Solver’s robust connector offers a quick and easy way to connect to Dynamics 365 (D365) Sales and Service. The D365 Sales and Service product has additional names including:
+
+* D365 Customer Insights
+* D365 Customer Engagement
+* D365 CRM
+
+### Technology
+
+Solver’s connector uses the following technologies provided by D365 CRM
+
+1. OAuth2 for authentication purposes: Solver’s connector will connect to your D365 Sales environment using your Microsoft EntraID credentials.
+   * These credentials can be the same credentials as the account logged into Solver or another account (ie: a service account)
+   * MFA policies are enforced on initial login between Solver and your D365 account.
+   * Users do not need to create an application in their D365 application to create a connection between Solver and your D365 Sales implementation
+2. ODatav4: Solver’s connector connects to the D365 OData service.
+
+## Users and Security
+
+Solver inherits the security context of the credentials provided in the Solver connector.
+
+* These credentials can be different from the credentials of the user logged into Solver.
+
+Solver requires read permissions to the data you are extracting from your D365 Sales environment into Solver. At a minimum, Solver requires read permissions to:
+
+1. Accounts
+2. BusiessOrganizations
+3. Leads
+4. Opportunities
+5. SystemUsers
+6. Products
+
+### Configuring Security
+
+The following section will detail, at a high level, how to configure security in your D365 Sales environment.
+
+* Solver Support does not support question on configuring security in your D365 implementation. Please contact your D365 Admin or Consultant for additional information.
+
+More detailed instructions on how to configure security can be found in [this Microsoft article](https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges?tabs=new).
+
+1. As a D365 Sales Admin, log into your D365 Sales site.
+2. In the upper right hand corner, click the Gear icon and choose Advanced Settings
+3. In the page that loads, Power Platform, on the left hand side find System > Security
+4. Choose Users
+5. From this menu you can view the users who are accessing your D365 Sales instance and also the roles they belong to. Ensure that the roles they belong to have read permissions to the Data that Solver will be accessing.
+6. If your Role(s) are too restrictive, back at the System > Security menu, choose Security Roles
+7. Find the security role that needs to be edited and select it.
+8. Fine the permission(s) and/or data that need to be granted read permissions and choose the level.
+   * It is recommended to choose Organization if you want all data associated to the data category to come into Solver.
