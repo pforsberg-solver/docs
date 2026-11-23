@@ -1,66 +1,108 @@
 ---
-title: "QuickStart"
+title: "QuickStart for Business Central"
 ---
-This article will detail the steps to set up and configure QuickStart for Dynamics 365 Sales, Field Service, and Customer Service, also known as CRM or Microsoft D365 CRM. QuickStart is a wizard-driven process made to assist you in quickly setting up an integration from your organization’s D365 CRM implementation to Solver Cloud.
+This article discusses how to configure a QuickStart integration for Business Central V2 in Solver and details on the connector.
 
-Before beginning a QuickStart integration with Microsoft D365 CRM, there are a few items to be aware of:
+# **Overview**
 
-* Solver’s QuickStart for Microsoft D365 CRM brings in the Opportunity header only at this time.
-* Solver’s D365 CRM Connector utilizes OAuth authentication between Solver and your D365 CRM implementation. When configuring the initial connection, it will be **required**that a user has several **Read** permissions enabled within their D365 CRM settings. **This must be done by a user with Administrative security permissions.** To change your role or access these permissions, please contact your Microsoft D365 Administrator.
-* In D365 CRM configurations, all accounts must be assigned to a role initially. Please check permissions before beginning the QuickStart process to confirm whether or not any changes are necessary.
-* **Users must have access to their Dynamics 365 Sales and Service URL before beginning this process.** If you do not know this URL, please contact your Microsoft D365 Administrator.
-* Popup blockers should be disabled to allow for the D365 CRM authentication screen to appear in the QuickStart wizard.
+This article will detail the steps to set up and configure QuickStart for Business Central which is sometimes referred to in this document as “QS”. QuickStart is a wizard-driven process made to assist you in quickly setting up an integration and reports from your organization’s Business Central implementation to Solver Cloud.
 
+Before using QuickStart for Business Central, there are a few items to be aware of:
 
-QuickStart for D365 CRM brings in the following CRM information:
+* QuickStart for Business Central is only supported for **Business Central V2 Cloud** to Solver Cloud customers. If you are hosting Business Central and/or Solver Private Host on-premise, QuickStart is **not** supported.
+* QuickStart is available to new implementations only, at this time.
+* Please disable popup blocking for the Solver Cloud site via your browser settings. This is needed in order to display the authentication screen.
 
-1. Deals header info
-2. Customers
-3. Contacts
-4. SalesPerson
+QuickStart for Business Central will give you out-of-the-box integrations to the General Ledger and more, as documented here.  In addition, you can connect to additional, BC-supported endpoints as documented [here](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/).
 
-## Pre-Configuration and Authorizing Solver
+This QuickStart implementation will allow for rapid data integrations from Business Central into your Solver tenant. With this method, users will be able to integrate the most common financial data, with the ability to integrate business-specific data, in a couple of clicks for their reporting and budgeting needs.
 
-This section can be skipped if you are using an existing account that has already set up permissions. These instructions are for those creating a new account and assigning it to a role. It is best practice to check your account permissions before launching QuickStart.
+Users should note that the basic QuickStart integration from BC that this guide has highlighted requires specific data brought in. This data is the minimum required components for a QuickStart using BC. For more information on the particular data available for this implementation, please reference [this article](https://solver-help-a8a6hpf2cnbgekbj.centralus-01.azurewebsites.net/knowledge-base/quickstart-features/) on QuickStart features.
 
-If you have administrative access to edit permissions in D365,
+## Pre-Configuration
 
-1. Sign in to your D365 account.
-2. Click the **Settings icon** from the toolbar.  
-3. Select **Advanced Settings** from the settings dropdown menu.
-4. Under the System menu, click **Security**.  
-5. From the Security Role list, select the pre-determined role name (ex: **Solver API**) to edit the permissions. This can be an existing or new role.   
-6. Change the permissions to **Read** by clicking the circle under the relevant row.  
-7. Press **Save and Close** to confirm the permissions that have been changed. Once these settings have been saved, security settings will be immediately inherited and users will be able to begin their QuickStart integration.
+Before beginning a QuickStart for Business Central integration, there are several steps that users must follow in order to ensure that their data will be imported into Solver. This section will describe these steps and link to other important knowledge-based articles with information on how to ensure the validity of the connection between BC and Solver.
 
-**The required permissions include:**
+The following section details the process of adding a Solver connection to the Business Central ERP.
 
-* Under **Core Records**:
-  + **Contacts**
-  + **Accounts**
-  + **Opportunity**
-* Under **Business Management**:
-  + **Users**
+This process must be followed in order to create an integration between the two programs successfully. Each user must follow these steps when setting up their permissions for the first time and these permissions can be edited at any time but any changes on the Business Central side require a new integration to be set up and run in order to use this data in Solver.
 
-These permissions are for QuickStart integrations only. Loading other data may require additional permissions when creating a manual integration using the D365 Sales and Service connector.
+For directions on how to configure your Business Central account to integrate with Solver, follow the steps documented below about Business Central.
 
-## QuickStart Setup Guide
+To use QuickStart with Business Central, users must:
+
+* Be a Solver Cloud AND Business Central Cloud Customer.
+* Allow popups in your browser. This is required because you must sign into your BC tenant via a Microsoft login popup during the configuration process of the BC integration.
+* Data permissions are based on the account’s permissions in Business Central. It is recommended to use an account with full data access to ensure a seamless data load process.
+
+1. Log in to [Business Central](https://businesscentral.dynamics.com/) using your account’s profile with **administrative permissions**.
+   * These changes must be made from the admin profile in order to connect to Solver and use Quick Start.
+2. Select the appropriate account from the login screen and enter the password for this account.
+3. Once logged in, follow the steps found in [this article](https://solver-help-a8a6hpf2cnbgekbj.centralus-01.azurewebsites.net/knowledge-base/solver-extension-for-d365bc/) to download the Solver extension for Business Central and activate the extension within Business Central.
+4. Following the setup of the extension, you will need to configure the account categories that you will be using with Solver in order to complete your QS integration.  
+   ![](/wp-content/uploads/2023/06/image-6.png)
+5. Select the search button and type account categories into the box and click on “G/L Account Categories”.
+6. See Business Central documentation for instructions on configuring account categories for your implementation.
+
+## **QuickStart Setup Guide**
+
+Before using a QuickStart for Business Central, you **must** create periods in the Data Warehouse if you have not already. Follow [these steps](?hkb-redirect&nonce=31bd3d6d44&check=14pct&redirect=https%3A%2F%2Fsupport.solverglobal.com%2Fhc%2Fen-us%2Farticles%2F360050782932&otype=unknown&oid=0&source=block-content) to create your Financial Calendar in Data Warehouse. You will need to create, at a minimum, the prior year and current fiscal year with the Data Warehouse. Once this process is complete, you may begin your QuickStart integration.
 
 To create a QuickStart integration:
 
-1. Navigate to the **Data Warehouse** > **Data**> **Integrations**.
-2. Select the **Add New** button from the upper right-hand corner of this screen to open the connector marketplace.
-3. Select **Dynamics 365 Sales and Service**.
-4. Click the **Create QuickStart** button.  
-5. Input your **Dynamics 365 Sales and Service URL** into the text box (ex: https://yourD365URL.com/). Once the URL has been verified, click the **Authenticate** button when it turns blue.  
-6. Select an **Environment** from the dropdown menu in the wizard and press **Authenticate** to begin logging into your Microsoft CRM account.
-   * Ensure that your pop-up blockers have been disabled.  
-7. Once the pop-up appears, choose an account and enter your password to continue with the authentication process.  
-8. Once you have successfully logged in to your Microsoft account, you will be returned to the wizard to confirm the authentication process has been completed.  
-9. Next, select the data you would like to import.
-   * At this time, only the Opportunities data is available for QuickStart.  
-10. Schedule a job to run your integration.  
-11. Review the selected data and click **Run Now** to run your integration.  
-12. Visit the Job page to confirm or make any changes to your scheduled Job.
+1. Navigate to the DW.
+2. Select the Data sub-menu.
+3. Click Integrations.
+4. Select the Add New button from the upper right-hand corner of this screen to open the connector marketplace.
+5. Select the BCv2 icon.
+6. Click the Create QuickStart button.  
+   ![](/wp-content/uploads/2021/05/BCQS5.png)
+7. Once the Wizard begins, click **Authenticate** to begin the login process.  
+     
+   As mentioned above, **make sure that popup blockers have been disabled in your browser’s settings** for the Solver Cloud site.  
+   ![](/wp-content/uploads/2023/06/image-1.png)
+8. Within the Microsoft Authentication pop-up window, type in (or choose) your account information.  
+   ![](/wp-content/uploads/2023/06/image-2.png)
+9. Select the Module data that you would like to use for your integration.  
+   ![](/wp-content/uploads/2023/06/BCQS2.png)
+10. Choose any custom dimensions to use in their GL module.  
+    ![](/wp-content/uploads/2023/06/BCQS3.png)
+11. Map your categories using the next screen which shows a hierarchal view of a balance sheet and income statement report in the main grid.  
+      
+    For more information on how to use the Category Mapping page, see our article detailing this page [here](https://solver-help-a8a6hpf2cnbgekbj.centralus-01.azurewebsites.net/knowledge-base/quick-start-category-mapping/).  
+    ![](/wp-content/uploads/2023/06/image-3.png)
+12. Complete this exercise for all account categories in use. It is strongly recommended by Solver that users do the account category mapping exercise. By completing the account category mapping exercise, users get access to the Template Marketplace where “ready to use” reports are available for download.
+13. Upload budget data from BC using one of the several options of the version of budget data.  
+    ![](/wp-content/uploads/2023/06/image-4.png)  
+    It is recommended to use the most recent budget data for optimal results.
+14. Create a job to run the integration by selecting from the options on the next page in the wizard.
+    * Set up a name, runtimes, and frequency of the integration job as well as an email(s) for users who should receive integration status emails.  
+        
+      ![](/wp-content/uploads/2023/06/image-5.png)
+15. Click Run to finalize your configuration and the data load process will begin.  
+    ![](/wp-content/uploads/2021/05/BCQS4.png)
+
+This completes the process for setting up a QuickStart for Business Central.
+
+### More information
+
+**Integrations**
+
+* A dimension integration loading in your chart of accounts and all selected dimensions.
+* A GL Detail Integration
+* An Opening Balance Integration
+* Accounts that have a beginning balance of $0 have been excluded by default. You can modify this integration to include $0 opening balance accounts. 
+  + Opening balance is only at the account level. It does not include any additional dimension information.
+
+**Rules**
+
+* Generate GL Summary Data: this rule will generate GL Summary data from the GL Detail data for Actuals only.
+* PopulateStargate: this rule will update all transactions with the appropriate Stargate value necessary for the Template Marketplace reports to work.
+
+**Job**
+
+* General Ledger Data Load (non-recurring): this job includes all the above integrations and rules as mentioned above, loading in the last year’s data to the current period’s worth of data. This job contains an opening balance data load and has been set to non-recurring since the opening balance does not need to be loaded in often.
+* General Ledger Data Load (recurring): This job includes all the above integrations and rules except for the opening balance integration. This has been removed from this job to reduce the number of transactions being imported for faster data loads.
+* Solver’s connector implements strategies such as paging to be as efficient as possible, but load and throttling from Microsoft and BC can cause API requests to take more than 4 minutes. Solver cannot increase this timeout restriction.
 
 Following a completed job, you can find many flexible templates for your CRM data in the Template Marketplace.
