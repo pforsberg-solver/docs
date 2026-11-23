@@ -72,11 +72,6 @@
               "GettingStarted",
               "updateSchedule"
             ]
-          },
-          "releaseNotes_bcExtension",
-          {
-            "group": "Untitled Group",
-            "pages": []
           }
         ]
       },
@@ -126,7 +121,8 @@
                 "pages": [
                   "bc-gettingStarted",
                   "d365BC-qs",
-                  "solverBcExtension"
+                  "solverBcExtension",
+                  "releaseNotes_bcExtension"
                 ]
               },
               {
