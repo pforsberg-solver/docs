@@ -1,5 +1,5 @@
 :root {
-  --content-width: 48rem; /* overwriting default of 36rem */
+  --content-width: 42rem; /* overwriting default of 36rem */
 }
 
 [data-layout-item="side-panel"] {
