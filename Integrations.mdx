@@ -1,66 +1,102 @@
 ---
 title: "Integrations"
+description: "Create, run, edit, and delete integrations that load data into the Solver Data Warehouse."
+keywords: ["integrations", "data warehouse", "connectors", "marketplace"]
 ---
 
-To get here 
+## Before you begin
 
-Users are able to do the following actions:
+### Required permissions
 
-* Create New Integrations
-* Run Integrations
-* Copy Integrations
-* Edit Integrations
-* Export/Import Integrations
-* Delete Integrations
+| Requirement | Purpose |
+|---|---|
+| **TODO: exact name of the Data Warehouse "edit integrations" permission** | Create, edit, and delete integrations. |
+| **TODO: exact name of the Data Warehouse "run integrations" permission** | Run and cancel integrations. |
 
-The integrations table shows all integrations previously created and ran by the user. The following integration details are displayed in the Solver Portal:
+<Note>If you don't see a button described on this page, you don't have the permission it needs. Contact your Solver administrator.</Note>
 
-* **Name**: The integration name set by the user during integration creation
-* **Source**: Shows which marketplace connector was used to create the integration
-* **Status**: Gives real time update on the status of each integration, and whether they succeeded or failed
-* **Last Run**: Displays the day and time when the integration was last ran
-* **Modified By**: Indicates which user most recently modified the given integration
-* **Last Modified**: Shows the day and time when the given integration was modified by the user in the Modified By column
+## How integrations work
 
-#### **Creating New Integration**
+An integration loads data from a source system into the Data Warehouse. You create it from a connector in the **Integration Marketplace**, then run it manually or automatically as part of a job.
 
-To create a new integration:
+To open the list of integrations, go to **Data** > **Integrations**. The integrations table shows:
 
-1. Navigate to **Data > Integrations** page.
-2. If Data Warehouse permission to edit integrations are enabled for your user, an **Add New** button appears at the top right corner of the page.
-3. Click this to navigate to the **Integration Marketplace**. This is where you can select the desired Gateway, File Import or ERP connector and kick off the integration creation wizard.
-4. From here, follow the steps listed in the **How to build an Integration** help page.
+| Column | What it shows |
+|---|---|
+| **Name** | The name you gave the integration when you created it. |
+| **Source** | The marketplace connector the integration uses. |
+| **Status** | The current status, updated in real time (see [Integration statuses](#integration-statuses)). |
+| **Last Run** | The date and time the integration last ran. |
+| **Modified By** | The user who last changed the integration. |
+| **Last Modified** | The date and time of that change. |
 
-#### **Running Existing Integrations**
+## Create an integration
 
-There are two ways to run existing integrations, either manually select them to run or set them to automatically run within a job. This help page will document how to manually run integrations.
+1. Go to **Data** > **Integrations**.
+2. In the upper-right corner, click **Add New**.
+3. In the **Integration Marketplace**, select a Gateway, File Import, or ERP connector.
 
-To run an integration manually:
+The integration creation wizard opens. For the remaining steps, see **How to build an integration** (TODO: link once the page exists).
 
-1. Navigate to **Data > Integrations** page.
-2. If Data Warehouse permission to run integrations are enabled for your user, the **Run** button () appears as the first button of the top left menu.
-3. Select the desired integration and click **Run**.
-4. The status of the selected job will then update from **Queued > Processing**. This indicates the job is currently running.
-5. While the integration’s status shows **Processing**, the **Run** button changes to a **Cancel** button (). If the integration needs to be cancelled for any reason while running, click this button.
-   * Note that the cancel button currently does not work if an integration is automatically running through a job.
-6. The integration status will then change to either **Success** or **Fail**, indicating the integration finished running.
+## Run an integration
 
-#### **Editing Existing Integrations**
+<Note>This section covers running an integration manually. To run integrations automatically, add them to a job.</Note>
 
-To edit an existing integration:
+1. Go to **Data** > **Integrations**.
+2. Select the integration.
+3. On the toolbar, click **Run**.
 
-1. Navigate to **Data > Integrations** page.
-2. If Data Warehouse permissions to run and edit integrations are enabled for your user, the **Edit** button () appears as the third button of the top left menu.
-3. Select the desired integration and click **Edit**.
-4. This will navigate the user to the **Task Manager** step of the integration creation wizard, displaying the current configuration for this integration.
-5. From here, follow the steps listed in the **How to build an Integration** help page for notes on how to edit the integration as desired.
+The status changes to **Queued**, then **Processing**, and finally **Success** or **Fail**.
 
-#### **Deleting Existing Integrations**
+### Cancel a running integration
 
-To delete an existing integration:
+While the status shows **Processing**, the **Run** button changes to **Cancel**. Click **Cancel** to stop the integration.
 
-1. Navigate to **Data > Integrations** page.
-2. If Data Warehouse permission to edit integrations are enabled for your user, the **Delete** button  appears as the last button of the top left menu.
-3. Select the desired integration and click **Delete**.
-4. The **Delete Integration** modal appears, asking for user confirmation.
-5. Clicking **Delete** will close the modal and remove the integration from the integrations table. Clicking **Cancel** will close the modal, leaving the integration as is in the integrations table.
+<Note>You can't cancel an integration that is running as part of a job.</Note>
+
+## Edit an integration
+
+1. Go to **Data** > **Integrations**.
+2. Select the integration.
+3. On the toolbar, click **Edit**.
+
+The integration creation wizard opens at the **Task Manager** step, with the integration's current settings. For details on each step, see **How to build an integration** (TODO: link once the page exists).
+
+## Copy an integration
+
+TODO: Add steps, or remove this section.
+
+## Export or import an integration
+
+TODO: Add steps, or remove this section.
+
+## Delete an integration
+
+<Warning>Deleting an integration removes it from the integrations table. TODO: confirm whether this can be undone.</Warning>
+
+1. Go to **Data** > **Integrations**.
+2. Select the integration.
+3. On the toolbar, click **Delete**.
+4. In the **Delete Integration** dialog box, click **Delete**.
+
+The integration is removed from the table. To keep the integration instead, click **Cancel**.
+
+## Button and action reference
+
+### Integrations toolbar
+
+| Button | What it does |
+|---|---|
+| **Add New** | Opens the **Integration Marketplace** to create an integration. |
+| **Run** | Runs the selected integration. Changes to **Cancel** while the integration is processing. |
+| **Edit** | Opens the selected integration in the creation wizard at the **Task Manager** step. |
+| **Delete** | Deletes the selected integration after you confirm. |
+
+### Integration statuses
+
+| Status | Meaning |
+|---|---|
+| **Queued** | The integration is waiting to start. |
+| **Processing** | The integration is running. |
+| **Success** | The integration finished without errors. |
+| **Fail** | The integration finished with errors. |
