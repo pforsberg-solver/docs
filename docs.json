@@ -23,16 +23,16 @@
   "navbar": {
     "links": [
       {
-        "href": "/Getting Started",
-        "label": "Product Help"
+        "href": "/release-notes",
+        "label": "Release Notes"
       },
       {
-        "href": "/Input Templates",
-        "label": "Implementation Guides"
-      },
-      {
-        "href": "/Data Warehouse",
+        "href": "/api",
         "label": "API"
+      },
+      {
+        "href": "https://support.solverglobal.com",
+        "label": "Get Support"
       }
     ],
     "primary": {
@@ -61,18 +61,12 @@
   },
   "navigation": {
     "pages": [
+      "release-notes",
       {
-        "group": "Solver",
-        "icon": "scroll-text",
+        "group": "Get Started with Solver",
         "pages": [
-          "release-notes",
-          {
-            "group": "Get Started with Solver",
-            "pages": [
-              "GettingStarted",
-              "updateSchedule"
-            ]
-          }
+          "GettingStarted",
+          "updateSchedule"
         ]
       },
       {
