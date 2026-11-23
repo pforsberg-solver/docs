@@ -72,21 +72,32 @@ This includes the operator “eq” to ensure that the only results that are pul
 
 Other examples of using the filter and sort tools include:
 
-* {{URL}}/api/v1/data/gl?$filter=scenario eq ‘ACT’
-* {{URL}}/api/v1/data/gl?$filter=period gt 20230101
-* {{URL}}/api/v1/data/gl?$filter=account eq 10100
-* {{URL}}/api/v1/data/gl?$orderBy=period desc
-* {{URL}}/api/v1/data/gl?$orderBy=transactionDate
+<CodeGroup>
+
+```text file name
+{{URL}}/api/v1/data/gl?\$filter=scenario eq ‘ACT’
+{{URL}}/api/v1/data/gl?\$filter=period gt 20230101
+{{URL}}/api/v1/data/gl?\$filter=account eq 10100
+{{URL}}/api/v1/data/gl?\$orderBy=period desc
+{{URL}}/api/v1/data/gl?\$orderBy=transactionDate
+```
+
+```text file name
+```
+
+</CodeGroup>
 
 Users are also able to filter based on Dimensions using this API. Once it has been configured, users can choose any Dimensions that are associated with a published Module.
 
 Examples of filtering on Dimensions with v1.0 include:
 
+```text
 {{URL}}/api/v1/data/account
 
 {{URL}}/api/v1/data/dim1
 
-{{URL}}/api/v1/data/account?$filter=accountType eq ‘BalanceSheet’
+{{URL}}/api/v1/data/account?\$filter=accountType eq ‘BalanceSheet’
+```
 
 Using the filtering/sorting with v1.0 of the API may require a formatting change on some fields within the Data Warehouse before submitting the query. By default, users will have a space in between words in their module attribute labels such as “Update On”. This will not be able to be read by the Data API while attempting to add a filter or sort to the query on that attribute. To remedy this, users can edit the label from the module configuration screen within their Solver data warehouse.
 
