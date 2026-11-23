@@ -21,6 +21,8 @@
 
 {/* Add any project-specific style rules below */}
 
+- Follow `.claude/skills/solver-article-style/SKILL.md` for article structure, callouts, and formatting. The model article is `rd.mdx`.
+
 - Use active voice and second person ("you")
 - Keep sentences concise — one idea per sentence
 - Use sentence case for headings
