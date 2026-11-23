@@ -121,8 +121,7 @@
                 "pages": [
                   "bc-gettingStarted",
                   "d365BC-qs",
-                  "solverBcExtension",
-                  "releaseNotes_bcExtension"
+                  "solverBcExtension"
                 ]
               },
               {
