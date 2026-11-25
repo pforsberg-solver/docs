@@ -1,3 +1,118 @@
 ---
 title: "Authentication"
 ---
+Login methods can be enforced at the customer level. Solver offers multiple authentication methods, including:
+
+1. Portal Authentication
+2. Entra ID Authentication
+3. Okta Authentication
+
+### Portal Authentication
+
+Portal authentication is the default method of authentication. The first user, when setting up your Solver implementation, must be added via portal authentication. It is recommended to always have at least two users with Portal authentication credentials.
+
+Portal authentication requires a username and password for sign-in.
+
+* Your username is your email.
+* Your password must be at least 6 characters.
+
+Solver enforces a policy of 6 failed password attempts. After the 6th failed attempt, your account is locked for 30 minutes. You may contact Solver Support or your Customer Admin to request a password reset if necessary.
+
+If you need to change your email address, please contact your Customer Administrator.
+
+#### MFA
+
+Customer Admins may also choose to enable Solver’s in-app Multi-Factor-Authentication (MFA). Solver’s MFA utilizes the Microsoft Authenticator app that must be installed on the end user’s phone. For instructions on this process, see [this article](https://support.microsoft.com/en-us/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a).
+
+Using Geo-blocking or IP Whitelisting with the Authenticator app for Solver is currently not available.
+
+### Microsoft Entra ID
+
+Solver supports Microsoft Entra ID (MEID), enabling an organization to manage user access to Solver from a single location: the organization’s Microsoft Entra ID. Users can opt to log in via Microsoft Entra ID on sign-in, or this can be enforced by an administrator.
+
+Using Microsoft Entra ID has the following advantages:
+
+1. Maintain user access to Solver through your organization’s Microsoft Entra ID.
+   * This **does not capture any data security permissions when** using the Solver app. Data Access is defined within the Solver application
+2. Single Sign-On (SSO) Support: This feature is native and enabled automatically, provided the user has signed in to Entra ID.
+3. Multi-Factor Authentication (MFA): for organizations that require and have enabled MFA on the MEID side, this is automatically required for login into Solver.
+
+**IMPORTANT**: Sovler MEID integration does not inherit data security permissions defined on the Entra ID side. You must define data access, described later in this article, in Solver.
+
+For organizations that have opted to use MEID Authentication, login issues may require assistance from your Entra ID Admin.
+
+To log in with your Entra ID credentials:
+
+1. Navigate to the Solver login screen, type in your email and click Next. ![](/wp-content/uploads/Settings-and-Administration_Login-Page_1.png)
+2. On the password screen, choose Sign In with Microsoft.![](/wp-content/uploads/Settings-and-Administration_Login-Page_2.png)
+3. If you have not already logged in, a prompt will appear asking you to enter your email address.
+   * Organizations that have enabled MFA will be required to complete the MFA process.
+   * Users who have already logged into an MEID app will be automatically logged into Solver via SSO after clicking the Sign in with Microsoft button.
+4. If this is your first time logging in using this method, you will be prompted to accept the Terms of Service. Accept these terms and proceed with completing the login process.
+
+#### Enforcing Entra ID Login
+
+Admin users can enforce Entra ID login for users by domain. By adding an enforced domain, all existing and future users belonging to that domain will be required to authenticate using Entra ID (formally Azure Active Directory – AAD) login.
+
+Users who do not belong to the configured Entra ID domain are not restricted by this setting and may use any supported authentication method.
+
+**NOTE:** This applies automatically to both existing users and users added after the Entra ID domain has been configured.
+
+To enforce Entra ID login:
+
+1. As a customer admin, once logged in, click on **Settings** and select the **Administration** menu option.
+2. Select the top option on the tenant list to see the overview of your security settings.  
+   ![](/wp-content/uploads/Settings-and-Administration_Login-Page_3.png)
+3. Type your domain name (mycompany.com) in the text box at the bottom of the overview menu and click the + icon to add it to the MEID settings. ![](/wp-content/uploads/Settings-and-Administration_Login-Page_4.png)
+
+Once set up, users on this domain will only be able to log in via MEID.
+
+* If your organization is changing domains due to acquisitions or a company name change, please contact Solver Support.
+
+### Multi-Factor Authentication
+
+Solver Cloud supports two methods of multi-factor authentication.
+
+1. MFA as configured in your external authentication provider.
+2. In App (“Portal”) MFA.
+
+MFA requires the use of the Authenticator app, which can be downloaded from the Apple App Store or Google Play Store for Android devices. Please download this app prior to setting up MFA.
+
+#### External Authentication and MFA
+
+Solver inherits an organization’s MFA settings for users logging in with Entra ID or Okta. Therefore, there are no setup requirements in Solver for organizations that are using MFA as part of their Entra ID login process.
+
+#### Portal Authentication and MFA
+
+For organizations looking to enforce MFA and are not using Entra ID, Solver Cloud offers the ability to enable an in-app MFA on login.
+
+1. Navigate to the Solver login screen and type in your email and password.
+2. Once logged in, click on Settings and select the Administration menu option.
+3. Select the top option on the tenant list to see the overview of your security settings.
+4. Toggle the switch next to “Require Mult-Factor Authentication for all users” to enable this setting.![](/wp-content/uploads/Settings-and-Administration_Login-Page_5.png)
+
+This feature is only enforced for users who are portal authenticated. It cannot be used in addition to your Entra ID MFA requirement if that has already been set up.
+
+### End User Experience
+
+Before signing into Solver, users must install the Authenticator App on their mobile device.
+
+1. Once enabled, the next time any user logs into Solver, they will be prompted with a QR code to configure MFA. ![](/wp-content/uploads/2021/03/MFA_registerapp-276x300-1.png)
+2. The user can then open the Authenticator app and scan the code.
+3. Next, within the Authenticator app, users will be provided with an access code and will need to type this code into the text box at the bottom of the pop-up in Solver and click Verify to enable MFA on their account successfully.
+4. After successfully logging in, users can log out and log back in to verify that MFA is working correctly.
+
+### Resetting External Authentication Methods
+
+This is needed when a user has rejoined the organization or changed email addresses. Under those circumstances a user might unable to authenticate using external authorization. Resetting the external authorization will allow it be created the next time the user authenticates. Resetting your external authentication can only be performed by a Customer Admin.
+
+To do this as a Customer Admin user:
+
+1. Click on Settings from the main toolbar and select the Administration menu option.
+2. In the top toolbar, click Search Users  
+   ![](/wp-content/uploads/Settings-and-Administration_Login-Page_7.png)
+3. Search for the user who needs to have their authentication reset.  
+   ![](/wp-content/uploads/2023/10/Reset-MFA-1.png)
+4. In the tile that appears with the user’s name, click Reset External Authentication.
+
+Users will then log in normally with their external account.
