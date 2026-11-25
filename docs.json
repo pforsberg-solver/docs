@@ -203,8 +203,16 @@
       {
         "group": "Settings and Administration",
         "pages": [
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions",
+          "settings/licensing",
+          "customer-and-tenants",
+          {
+            "group": "User Management",
+            "pages": [
+              "settings/usermgmt/users",
+              "authentication",
+              "platform/administration/roles-permissions"
+            ]
+          },
           {
             "group": "Monitoring",
             "pages": []
